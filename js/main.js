@@ -133,4 +133,119 @@ const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
   });
 })();
 
+
+// Ir ao formulário com mensagem preenchida
+const goContact = msg => {
+  const m = $('#mensagem');
+  if (m) m.value = msg;
+  $('#contato').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
+  setTimeout(() => $('#nome').focus({ preventScroll: true }), reduce ? 0 : 700);
+};
+
+// Quiz de objetivo
+(function quiz() {
+  const Q = [
+    {
+      q: 'Qual é o seu principal objetivo?', o: [
+        { t: 'Ganhar massa muscular', s: { whey: 3 } },
+        { t: 'Emagrecer com saúde', s: { termo: 2, whey: 1 } },
+        { t: 'Ter mais energia e disposição', s: { termo: 2, vitd: 1 } },
+        { t: 'Cuidar da saúde em geral', s: { vitd: 2 } }]
+    },
+    {
+      q: 'Quantas vezes por semana você treina?', o: [
+        { t: 'Até 1 vez', s: { vitd: 1 } },
+        { t: '2 a 3 vezes', s: { whey: 1 } },
+        { t: '4 vezes ou mais', s: { whey: 2, termo: 1 } }]
+    },
+    {
+      q: 'Como está a sua alimentação?', o: [
+        { t: 'Tenho dificuldade de atingir minha meta de proteína', s: { whey: 2 } },
+        { t: 'Pulo refeições com frequência', s: { termo: 1, vitd: 1 } },
+        { t: 'Como bem e em horários regulares', s: {} }]
+    },
+    {
+      q: 'Quanto tempo você passa ao sol?', o: [
+        { t: 'Pouco, fico a maior parte do dia em ambientes fechados', s: { vitd: 2 } },
+        { t: 'Algumas vezes por semana', s: { vitd: 1 } },
+        { t: 'Bastante, quase todo dia', s: {} }]
+    }
+  ];
+  const P = {
+    whey: ['Whey Protein', 'Ajuda a completar a meta diária de proteína e a recuperação depois do treino.'],
+    vitd: ['Vitamina D', 'Costuma ser considerada por quem tem pouca exposição ao sol. Vale confirmar com exame.'],
+    termo: ['Termogênico Natural', 'Apoio de energia e foco durante os treinos e na rotina.']
+  };
+  const stage = $('#quiz-stage'), bar = $('#quiz-bar');
+  let picks = [];
+  const focusTitle = () => { const t = $('#q-title'); if (t) t.focus({ preventScroll: true }); };
+
+  const render = () => {
+    bar.style.width = (picks.length / Q.length * 100) + '%';
+    if (picks.length >= Q.length) return result();
+    const i = picks.length, q = Q[i];
+    stage.innerHTML = `<p class="q-step">Pergunta ${i + 1} de ${Q.length}</p>
+      <h3 id="q-title" tabindex="-1">${q.q}</h3>
+      <div class="opts" role="group" aria-labelledby="q-title">${q.o.map((o, k) => `<button type="button" class="opt" data-k="${k}">${o.t}</button>`).join('')}</div>
+      ${i ? '<button type="button" class="q-back" data-act="back">Voltar</button>' : ''}`;
+    if (i) focusTitle();
+  };
+
+  const result = () => {
+    const sc = { whey: 0, vitd: 0, termo: 0 };
+    picks.forEach((k, i) => Object.entries(Q[i].o[k].s).forEach(([p, v]) => sc[p] += v));
+    const top = Object.keys(sc).sort((a, b) => sc[b] - sc[a]).filter(p => sc[p] > 0).slice(0, 2);
+    const names = top.map(p => P[p][0]);
+    stage.innerHTML = `<p class="q-step">Resultado</p>
+      <h3 id="q-title" tabindex="-1">Sua recomendação inicial</h3>
+      ${top.length ? `<ul class="rec">${top.map(p => `<li><strong>${P[p][0]}</strong><span>${P[p][1]}</span></li>`).join('')}</ul>` : '<p class="note">Pelo seu perfil, o melhor primeiro passo é uma avaliação individual com a nossa equipe.</p>'}
+      <p class="note">Recomendação inicial, sem caráter de prescrição. A indicação ideal depende de uma avaliação individual.</p>
+      <div class="q-actions"><button type="button" class="btn btn-green" data-act="book">Agendar consulta</button><button type="button" class="btn btn-ghost" data-act="again">Refazer o quiz</button></div>`;
+    focusTitle();
+    stage.dataset.msg = `Fiz o quiz no site. Meu objetivo: ${Q[0].o[picks[0]].t.toLowerCase()}. Recomendação inicial: ${names.join(' e ') || 'avaliação individual'}. Gostaria de agendar uma consulta.`;
+  };
+
+  stage.addEventListener('click', e => {
+    const opt = e.target.closest('.opt'), act = e.target.closest('[data-act]')?.dataset.act;
+    if (opt) {
+      opt.classList.add('on');
+      picks.push(+opt.dataset.k);
+      setTimeout(render, reduce ? 0 : 280);
+    } else if (act === 'back') { picks.pop(); render(); }
+    else if (act === 'again') { picks = []; render(); }
+    else if (act === 'book') goContact(stage.dataset.msg);
+  });
+  render();
+})();
+
+// Calculadoras: IMC, proteína e água
+(function calc() {
+  const $v = id => $('#' + id);
+  const peso = $v('c-peso'), alt = $v('c-altura'), obj = $v('c-obj'), tr = $v('c-treino'), cta = $v('calc-cta');
+  const faixa = { saude: [0.8, 1.2], massa: [1.6, 2.2], emagrecer: [1.6, 2.0] };
+  const cat = i => i < 18.5 ? 'Abaixo do peso' : i < 25 ? 'Peso adequado' : i < 30 ? 'Sobrepeso' : 'Obesidade';
+  const fmt = n => n.toFixed(1).replace('.', ',');
+  let msg = '';
+  const update = () => {
+    const p = peso.valueAsNumber, a = alt.valueAsNumber;
+    const ok = p >= 30 && p <= 300 && a >= 120 && a <= 230;
+    cta.disabled = !ok;
+    if (!ok) {
+      ['o-imc', 'o-prot', 'o-agua'].forEach(id => $v(id).textContent = '--');
+      $v('o-imc-n').textContent = 'Informe peso (30 a 300 kg) e altura (120 a 230 cm).';
+      return;
+    }
+    const imc = p / Math.pow(a / 100, 2), [lo, hi] = faixa[obj.value].map(f => Math.round(f * p));
+    const agua = (p * 35 + parseFloat(tr.value) * 500) / 1000;
+    $v('o-imc').textContent = fmt(imc);
+    $v('o-imc-n').textContent = cat(imc);
+    $v('o-prot').textContent = `${lo} a ${hi} g`;
+    $v('o-agua').textContent = `${fmt(agua)} L`;
+    msg = `Usei as calculadoras do site. Peso ${p} kg, altura ${a} cm, IMC ${fmt(imc)}. Proteína estimada de ${lo} a ${hi} g por dia e água de ${fmt(agua)} L por dia. Gostaria de uma orientação personalizada.`;
+  };
+  [peso, alt, obj, tr].forEach(el => el.addEventListener('input', update));
+  cta.addEventListener('click', () => goContact(msg));
+  update();
+})();
+
 $('#year').textContent = new Date().getFullYear();
