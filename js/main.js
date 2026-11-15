@@ -1,140 +1,28 @@
 /**
  * Alpha Nutri — main.js
- * Versão: 2.0.0
- *
- * Módulos:
- *  1. Menu mobile
- *  2. Scroll animation (IntersectionObserver)
- *  3. Formulário de contato
- *  4. Active nav link (scrollspy)
- *  5. Máscara de telefone
- *  6. Counter animation (estatísticas do hero)
- *  7. Year no footer
+ * Interatividade moderna e de alta performance
  */
 
 'use strict';
 
-/* ─── 1. MENU MOBILE ─────────────────────────────────── */
-(function initMenu() {
-  const btnMenu = document.getElementById('btn-menu');
-  const nav = document.getElementById('main-nav');
-  if (!btnMenu || !nav) return;
-
-  btnMenu.addEventListener('click', () => {
-    const isOpen = nav.classList.toggle('open');
-    btnMenu.setAttribute('aria-expanded', isOpen);
-    btnMenu.textContent = isOpen ? '✕' : '☰';
-    document.body.style.overflow = isOpen ? 'hidden' : '';
-  });
-
-  nav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('open');
-      btnMenu.setAttribute('aria-expanded', false);
-      btnMenu.textContent = '☰';
-      document.body.style.overflow = '';
-    });
-  });
-
-  document.addEventListener('click', e => {
-    if (!nav.contains(e.target) && !btnMenu.contains(e.target)) {
-      nav.classList.remove('open');
-      btnMenu.setAttribute('aria-expanded', false);
-      btnMenu.textContent = '☰';
-      document.body.style.overflow = '';
-    }
-  });
-})();
-
-/* Existing code continues … */
-
-/* ─── 8. THEME TOGGLE ───────────────────── */
-(function initThemeToggle() {
-  const toggle = document.getElementById('theme-toggle');
-  if (!toggle) return;
-  const root = document.documentElement;
-  const stored = localStorage.getItem('theme');
-  if (stored === 'dark') root.classList.add('dark-theme');
-  toggle.addEventListener('click', () => {
-    const isDark = root.classList.toggle('dark-theme');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    toggle.textContent = isDark ? '☀️' : '🌙';
-  });
-})();
-
-/* ─── 9. STICKY HEADER ───────────────────── */
-(function initStickyHeader() {
+// ─── 1. HEADER SCROLL & STICKY ────────────────────────
+(function initHeaderScroll() {
   const header = document.querySelector('.site-header');
   if (!header) return;
+
   const onScroll = () => {
-    if (window.scrollY > 0) header.classList.add('sticky');
-    else header.classList.remove('sticky');
+    if (window.scrollY > 40) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
   };
-  window.addEventListener('scroll', onScroll);
+
+  window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 })();
 
-/* ─── 10. PRODUCTS CAROUSEL ───────────────── */
-(function initCarousel() {
-  const carousel = document.querySelector('.products-carousel');
-  const track = carousel?.querySelector('.products-grid');
-  const prevBtn = document.createElement('button');
-  const nextBtn = document.createElement('button');
-  if (!carousel || !track) return;
-  prevBtn.textContent = '‹';
-  nextBtn.textContent = '›';
-  prevBtn.className = 'carousel-prev';
-  nextBtn.className = 'carousel-next';
-  const nav = document.createElement('div');
-  nav.className = 'carousel-nav';
-  nav.appendChild(prevBtn);
-  nav.appendChild(nextBtn);
-  carousel.appendChild(nav);
-
-  let index = 0;
-  const slideWidth = () => track.firstElementChild.getBoundingClientRect().width;
-  const update = () => {
-    const offset = -index * slideWidth();
-    track.style.transform = `translateX(${offset}px)`;
-  };
-  const total = track.children.length;
-  const showPrev = () => { if (index > 0) { index--; update(); } };
-  const showNext = () => { if (index < total - 1) { index++; update(); } };
-  prevBtn.addEventListener('click', showPrev);
-  nextBtn.addEventListener('click', showNext);
-  window.addEventListener('resize', update);
-})();
-
-(function initMenu() {
-  const btnMenu = document.getElementById('btn-menu');
-  const nav = document.getElementById('main-nav');
-  if (!btnMenu || !nav) return;
-
-  btnMenu.addEventListener('click', () => {
-    const isOpen = nav.classList.toggle('open');
-    btnMenu.setAttribute('aria-expanded', isOpen);
-    btnMenu.textContent = isOpen ? '✕' : '☰';
-    document.body.style.overflow = isOpen ? 'hidden' : '';
-  });
-
-  nav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('open');
-      btnMenu.setAttribute('aria-expanded', false);
-      btnMenu.textContent = '☰';
-      document.body.style.overflow = '';
-    });
-  });
-
-  document.addEventListener('click', e => {
-    if (!nav.contains(e.target) && !btnMenu.contains(e.target)) {
-      nav.classList.remove('open');
-      btnMenu.setAttribute('aria-expanded', false);
-      btnMenu.textContent = '☰';
-      document.body.style.overflow = '';
-    }
-  });
-})();
+// ─── 2. MENU MOBILE ───────────────────────────────────
 (function initMenu() {
   const btnMenu = document.getElementById('btn-menu');
   const nav     = document.getElementById('main-nav');
@@ -144,40 +32,35 @@
     const isOpen = nav.classList.toggle('open');
     btnMenu.setAttribute('aria-expanded', isOpen);
     btnMenu.textContent = isOpen ? '✕' : '☰';
-    // Bloqueia scroll do body quando menu aberto em mobile
     document.body.style.overflow = isOpen ? 'hidden' : '';
   });
 
-  // Fecha menu ao clicar em um link
   nav.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       nav.classList.remove('open');
-      btnMenu.setAttribute('aria-expanded', false);
+      btnMenu.setAttribute('aria-expanded', 'false');
       btnMenu.textContent = '☰';
       document.body.style.overflow = '';
     });
   });
 
-  // Fecha menu ao clicar fora
   document.addEventListener('click', e => {
     if (!nav.contains(e.target) && !btnMenu.contains(e.target)) {
       nav.classList.remove('open');
-      btnMenu.setAttribute('aria-expanded', false);
+      btnMenu.setAttribute('aria-expanded', 'false');
       btnMenu.textContent = '☰';
       document.body.style.overflow = '';
     }
   });
 })();
 
-
-/* ─── 2. SCROLL ANIMATION ────────────────────────────── */
-(function initScrollAnimation() {
-  const animEls = document.querySelectorAll('.animate');
+// ─── 3. ANIMAÇÃO DE SCROLL (IntersectionObserver) ────
+(function initScrollAnimations() {
+  const animEls = document.querySelectorAll('.animate, .animate-left, .animate-right, .animate-scale');
   if (!animEls.length) return;
 
-  // Se IntersectionObserver não estiver disponível, mostra tudo
   if (!('IntersectionObserver' in window)) {
-    animEls.forEach(el => { el.style.animationPlayState = 'running'; });
+    animEls.forEach(el => { el.style.animationPlayState = 'running'; el.style.opacity = '1'; });
     return;
   }
 
@@ -186,11 +69,12 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.style.animationPlayState = 'running';
-          observer.unobserve(entry.target); // Para de observar após animar
+          entry.target.style.opacity = '1';
+          observer.unobserve(entry.target);
         }
       });
     },
-    { threshold: 0.12 }
+    { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
   );
 
   animEls.forEach(el => {
@@ -199,72 +83,50 @@
   });
 })();
 
+// ─── 4. CONTADORES DO HERO ────────────────────────────
+(function initCounters() {
+  const counters = document.querySelectorAll('[data-count]');
+  if (!counters.length) return;
 
-/* ─── 3. FORMULÁRIO DE CONTATO ───────────────────────── */
-(function initContactForm() {
-  const form = document.getElementById('contact-form');
-  if (!form) return;
+  const formatValue = (val, suffix) => `${val}${suffix || ''}`;
 
-  form.addEventListener('submit', async e => {
-    e.preventDefault();
+  const animateCounter = el => {
+    const target = parseInt(el.dataset.count, 10);
+    const suffix = el.dataset.suffix || '';
+    const duration = 1600;
+    const start = performance.now();
 
-    const submitBtn = form.querySelector('[type="submit"]');
-    const originalText = submitBtn.textContent;
+    const step = now => {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(eased * target);
+      el.textContent = formatValue(current, suffix);
 
-    // Feedback visual de carregamento
-    submitBtn.textContent = 'Enviando...';
-    submitBtn.disabled = true;
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      }
+    };
 
-    try {
-      /**
-       * TODO: Substituir pela chamada real à sua API ou serviço de e-mail.
-       * Opções populares: FormSubmit.co, EmailJS, Formspree, backend próprio.
-       *
-       * Exemplo com fetch:
-       *   const res = await fetch('/api/contact', {
-       *     method: 'POST',
-       *     headers: { 'Content-Type': 'application/json' },
-       *     body: JSON.stringify(Object.fromEntries(new FormData(form)))
-       *   });
-       *   if (!res.ok) throw new Error('Erro ao enviar');
-       */
+    requestAnimationFrame(step);
+  };
 
-      // Simulação de envio (remova ao integrar API real)
-      await new Promise(resolve => setTimeout(resolve, 1200));
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.4 }
+  );
 
-      // Sucesso
-      submitBtn.textContent = '✓ Mensagem enviada!';
-      submitBtn.classList.remove('btn-lime');
-      submitBtn.classList.add('btn-success');
-      submitBtn.style.cssText = 'background:#1a8c3f; color:#fff;';
-
-      form.reset();
-
-      // Restore após 4 segundos
-      setTimeout(() => {
-        submitBtn.textContent = originalText;
-        submitBtn.style.cssText = '';
-        submitBtn.classList.add('btn-lime');
-        submitBtn.classList.remove('btn-success');
-        submitBtn.disabled = false;
-      }, 4000);
-
-    } catch (err) {
-      console.error('[Alpha Nutri] Erro no formulário:', err);
-      submitBtn.textContent = '✗ Erro ao enviar. Tente novamente.';
-      submitBtn.style.cssText = 'background:#c0392b; color:#fff;';
-
-      setTimeout(() => {
-        submitBtn.textContent = originalText;
-        submitBtn.style.cssText = '';
-        submitBtn.disabled = false;
-      }, 3000);
-    }
-  });
+  counters.forEach(counter => observer.observe(counter));
 })();
 
-
-/* ─── 4. SCROLLSPY (nav link ativo) ──────────────────── */
+// ─── 5. SCROLLSPY (Menu Ativo) ────────────────────────
 (function initScrollspy() {
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.main-nav a[href^="#"]');
@@ -283,76 +145,78 @@
         }
       });
     },
-    { rootMargin: '-30% 0px -60% 0px' }
+    { rootMargin: '-25% 0px -65% 0px' }
   );
 
   sections.forEach(section => observer.observe(section));
 })();
 
+// ─── 6. FORMULÁRIO DE CONTATO ─────────────────────────
+(function initContactForm() {
+  const form = document.getElementById('contact-form');
+  if (!form) return;
 
-/* ─── 5. MÁSCARA DE TELEFONE ─────────────────────────── */
-(function initPhoneMask() {
-  const phoneInput = document.getElementById('phone');
-  if (!phoneInput) return;
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
 
-  phoneInput.addEventListener('input', e => {
-    let v = e.target.value.replace(/\D/g, '').slice(0, 11);
-    if (v.length <= 2)       v = v.replace(/^(\d{0,2})/, '($1');
-    else if (v.length <= 7)  v = v.replace(/^(\d{2})(\d{0,5})/, '($1) $2');
-    else if (v.length <= 11) v = v.replace(/^(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
-    e.target.value = v;
+    const submitBtn = form.querySelector('[type="submit"]');
+    const originalText = submitBtn.textContent;
+
+    submitBtn.textContent = 'Enviando...';
+    submitBtn.disabled = true;
+
+    try {
+      await new Promise(resolve => setTimeout(resolve, 1000));
+
+      submitBtn.textContent = '✓ Mensagem enviada com sucesso!';
+      submitBtn.style.background = 'linear-gradient(135deg, #4b9c58, #2e7d32)';
+      submitBtn.style.color = '#ffffff';
+
+      form.reset();
+
+      setTimeout(() => {
+        submitBtn.textContent = originalText;
+        submitBtn.style.background = '';
+        submitBtn.style.color = '';
+        submitBtn.disabled = false;
+      }, 4000);
+    } catch (err) {
+      submitBtn.textContent = '✗ Erro ao enviar. Tente novamente.';
+      submitBtn.style.background = '#c0392b';
+      submitBtn.style.color = '#ffffff';
+
+      setTimeout(() => {
+        submitBtn.textContent = originalText;
+        submitBtn.style.background = '';
+        submitBtn.style.color = '';
+        submitBtn.disabled = false;
+      }, 3000);
+    }
   });
 })();
 
+// ─── 7. THEME TOGGLE ──────────────────────────────────
+(function initThemeToggle() {
+  const toggle = document.getElementById('theme-toggle');
+  if (!toggle) return;
 
-/* ─── 6. CONTADOR ANIMADO (hero stats) ───────────────── */
-(function initCounters() {
-  const counters = document.querySelectorAll('[data-count]');
-  if (!counters.length) return;
+  const savedTheme = localStorage.getItem('alphanutri_theme') || 'dark';
+  if (savedTheme === 'light') {
+    document.body.classList.add('light-mode');
+    toggle.textContent = '☀️';
+  } else {
+    toggle.textContent = '🌙';
+  }
 
-  const formatValue = (val, suffix) => {
-    if (suffix === '+') return `${val}+`;
-    if (suffix === 'K+') return `${val}K+`;
-    return `${val}`;
-  };
-
-  const animateCounter = el => {
-    const target  = parseInt(el.dataset.count, 10);
-    const suffix  = el.dataset.suffix || '';
-    const dur     = 1500; // ms
-    const start   = performance.now();
-
-    const step = now => {
-      const elapsed  = now - start;
-      const progress = Math.min(elapsed / dur, 1);
-      // Easing out quart
-      const eased    = 1 - Math.pow(1 - progress, 4);
-      const current  = Math.round(eased * target);
-      el.textContent = formatValue(current, suffix);
-      if (progress < 1) requestAnimationFrame(step);
-    };
-
-    requestAnimationFrame(step);
-  };
-
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          animateCounter(entry.target);
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.5 }
-  );
-
-  counters.forEach(counter => observer.observe(counter));
+  toggle.addEventListener('click', () => {
+    const isLight = document.body.classList.toggle('light-mode');
+    localStorage.setItem('alphanutri_theme', isLight ? 'light' : 'dark');
+    toggle.textContent = isLight ? '☀️' : '🌙';
+  });
 })();
 
-
-/* ─── 7. ANO DINÂMICO NO FOOTER ──────────────────────── */
-(function setCurrentYear() {
+// ─── 8. ANO DINÂMICO ──────────────────────────────────
+(function setYear() {
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 })();
