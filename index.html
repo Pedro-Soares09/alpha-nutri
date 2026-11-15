@@ -3,191 +3,275 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Alpha Nutri — Suplementos premium e orientação nutricional</title>
-  <meta name="description" content="Alpha Nutri oferece suplementos de alta qualidade, vitaminas, produtos naturais e acompanhamento nutricional personalizado em Recife, PE." />
-  <link rel="stylesheet" href="css/style.css" />
-  <!-- Google Fonts -->
+  <title>Alpha Nutri — Suplementos Premium em Recife</title>
+  <meta name="description" content="Alpha Nutri: suplementos premium, vitaminas, produtos naturais e orientação nutricional personalizada em Recife, PE." />
+  <link rel="icon" type="image/jpeg" href="img/logo.jpeg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
   <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
 
-  <!-- HEADER -->
+  <!-- ═══ HEADER ═══ -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
       <a class="brand" href="#home" aria-label="Alpha Nutri — Página inicial">
-        <img src="img/logo.jpeg" alt="Logo Alpha Nutri" class="brand-logo" width="42" height="42" />
+        <img src="img/logo.jpeg" alt="Logo Alpha Nutri" class="brand-logo" width="44" height="44" />
         <span class="brand-text">ALPHA<span>NUTRI</span></span>
       </a>
       <nav class="main-nav" id="main-nav" aria-label="Menu principal">
         <ul role="list">
           <li><a href="#home">Home</a></li>
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#fundadores">Fundadores</a></li>
+          <li><a href="#historia">História</a></li>
+          <li><a href="#equipe">Equipe</a></li>
           <li><a href="#produtos">Produtos</a></li>
           <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#empresa">Empresa</a></li>
           <li><a href="#contato" class="nav-cta">Fale conosco</a></li>
         </ul>
       </nav>
-      <!-- Theme toggle button -->
-      <button class="btn btn-ghost" id="theme-toggle" aria-label="Alternar tema claro/escuro">🌙</button>
-      <button class="btn-menu" id="btn-menu" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menu de navegação">☰</button>
-    </div>
-  </header>
-    <div class="container header-inner">
-      <a class="brand" href="#home" aria-label="Alpha Nutri — Página inicial">
-        <img src="img/logo.jpeg" alt="Logo Alpha Nutri" class="brand-logo" width="42" height="42" />
-        <span class="brand-text">ALPHA<span>NUTRI</span></span>
-      </a>
-      <nav class="main-nav" id="main-nav" aria-label="Menu principal">
-        <ul role="list">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#fundadores">Fundadores</a></li>
-          <li><a href="#produtos">Produtos</a></li>
-          <li><a href="#servicos">Serviços</a></li>
-          <li><a href="#contato" class="nav-cta">Fale conosco</a></li>
-        </ul>
-      </nav>
-      <button class="btn-menu" id="btn-menu" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menu de navegação">☰</button>
+      <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
+      <button class="btn-menu" id="btn-menu" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menu">☰</button>
     </div>
   </header>
 
   <main id="main-content">
 
-    <!-- HERO -->
+    <!-- ═══ HERO ═══ -->
     <section id="home" class="hero" aria-labelledby="hero-title">
       <div class="container hero-inner">
         <div class="hero-text">
-          <p class="hero-eyebrow">Saúde &amp; Performance</p>
-          <h1 id="hero-title">Alcance seu <em>pico</em> de performance</h1>
-          <p class="hero-desc">Suplementos premium, vitaminas e orientação nutricional personalizada para quem leva a saúde a sério. Mais de 10 anos ajudando atletas e profissionais de Recife.</p>
-          <div class="hero-actions">
-            <a class="btn btn-lime" href="#produtos">Ver produtos</a>
+          <p class="hero-eyebrow animate">Suplementação &amp; Nutrição</p>
+          <h1 id="hero-title" class="animate delay-1">Sua evolução<br><em>começa aqui.</em></h1>
+          <p class="hero-desc animate delay-2">
+            Suplementos premium, vitaminas e orientação nutricional personalizada
+            para quem leva saúde e performance a sério. Em Recife, há mais de 10 anos
+            transformando vidas.
+          </p>
+          <div class="hero-actions animate delay-3">
+            <a class="btn btn-green" href="#produtos">Ver produtos</a>
             <a class="btn btn-ghost" href="#contato">Agendar consulta</a>
           </div>
+          <div class="hero-stats animate delay-4">
+            <div>
+              <div class="stat-num" data-count="10" data-suffix="+">0</div>
+              <div class="stat-label">Anos de experiência</div>
+            </div>
+            <div>
+              <div class="stat-num" data-count="3" data-suffix="K+">0</div>
+              <div class="stat-label">Clientes atendidos</div>
+            </div>
+            <div>
+              <div class="stat-num" data-count="200" data-suffix="+">0</div>
+              <div class="stat-label">Produtos disponíveis</div>
+            </div>
+          </div>
         </div>
-        <div class="hero-image-wrap" aria-hidden="true">
-          <img src="img/lifestyle_hero.jpeg" alt="Pessoa praticando esporte ao ar livre" width="420" height="525" loading="eager" fetchpriority="high" />
+        <div class="hero-image-wrap animate-right delay-2" aria-hidden="true">
+          <img src="img/produtos.jpeg" alt="" width="420" height="525" loading="eager" />
           <div class="hero-badge"><strong>✓</strong> Procedência certificada</div>
         </div>
       </div>
     </section>
 
-    <!-- SOBRE A ALPHA NUTRI -->
-    <section id="sobre" class="section" aria-labelledby="sobre-title">
+    <!-- ═══ HISTÓRIA ═══ -->
+    <section id="historia" class="section about-section" aria-labelledby="historia-title">
       <div class="container">
-        <div class="section-header">
-          <div>
-            <span class="tag">Nossa história</span>
-            <h2 id="sobre-title">De um sonho à referência em Recife</h2>
-          </div>
-          <p>Em 2015, três amigos apaixonados por nutrição e performance perceberam que o mercado carecia de suplementos transparentes e de qualidade. Assim nasceu a Alpha Nutri, combinando ciência avançada, matéria‑prima rigorosamente selecionada e um atendimento humano.</p>
+        <div class="section-header animate">
+          <span class="tag">Nossa história</span>
+          <h2 id="historia-title">De um sonho à <span>referência</span></h2>
+          <p>Conheça a trajetória da Alpha Nutri: uma empresa que nasceu da paixão por nutrição e cresceu com ciência, dedicação e propósito.</p>
         </div>
-        <div class="about-grid">
-          <div class="about-img"><img src="img/laboratorio.jpg" alt="Laboratório Alpha Nutri" loading="lazy" width="600" height="400" /></div>
-          <div class="about-text">
+
+        <div class="timeline">
+          <div class="timeline-item animate delay-1">
+            <h3>2014 — O início</h3>
+            <p>Tudo começou quando um grupo de estudantes universitários apaixonados por saúde e administração percebeu uma lacuna no mercado de suplementos em Recife: faltava transparência, qualidade acessível e um atendimento verdadeiramente humano. Nascia ali a ideia da Alpha Nutri.</p>
+          </div>
+          <div class="timeline-item animate delay-2">
+            <h3>2016 — Primeiros passos</h3>
+            <p>Com muito estudo e planejamento, a Alpha Nutri abriu suas portas na Av. Caxangá. A equipe era pequena, mas a missão era grande: oferecer suplementos de procedência certificada, com orientação profissional e preços justos.</p>
+          </div>
+          <div class="timeline-item animate delay-3">
+            <h3>2018 — Crescimento</h3>
+            <p>A base de clientes cresceu rapidamente. A Alpha Nutri ampliou seu portfólio para mais de 100 produtos, incluindo vitaminas, proteínas, termogênicos e produtos naturais. A consultoria nutricional personalizada se tornou um diferencial reconhecido.</p>
+          </div>
+          <div class="timeline-item animate delay-4">
+            <h3>2020 — Expansão digital</h3>
+            <p>Mesmo diante dos desafios da pandemia, a Alpha Nutri se reinventou. Lançou seu e-commerce, ampliou o atendimento online e passou a oferecer consultorias virtuais, alcançando clientes em todo o Nordeste.</p>
+          </div>
+          <div class="timeline-item animate delay-5">
+            <h3>2024 — Referência em Recife</h3>
+            <p>Com mais de 3.000 clientes atendidos, 200+ produtos em catálogo e uma equipe multidisciplinar de excelência, a Alpha Nutri se consolidou como referência em suplementação e orientação nutricional em Recife e região.</p>
+          </div>
+        </div>
+
+        <!-- Missão / Visão / Valores -->
+        <div class="mvv-grid">
+          <div class="mvv-card animate delay-1">
+            <span class="icon">🎯</span>
             <h3>Missão</h3>
-            <p>Capacitar pessoas a viverem sua melhor versão através de nutrição premium, baseada em ciência e ética.</p>
+            <p>Capacitar pessoas a viverem sua melhor versão através de nutrição premium, baseada em ciência e ética, promovendo saúde e bem‑estar acessíveis a todos.</p>
+          </div>
+          <div class="mvv-card animate delay-2">
+            <span class="icon">🔭</span>
             <h3>Visão</h3>
-            <p>Ser a referência nacional em suplementos de alta performance, reconhecida pela transparência e inovação.</p>
+            <p>Ser a referência nacional em suplementos de alta performance, reconhecida pela transparência, inovação e compromisso com a saúde dos nossos clientes.</p>
+          </div>
+          <div class="mvv-card animate delay-3">
+            <span class="icon">💎</span>
             <h3>Valores</h3>
             <ul>
               <li>Qualidade acima de tudo</li>
               <li>Inovação constante</li>
               <li>Compromisso com a saúde</li>
+              <li>Transparência total</li>
               <li>Sustentabilidade</li>
+              <li>Atendimento humano</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FUNDADORES -->
-    <section id="fundadores" class="section" aria-labelledby="fundadores-title">
+    <!-- ═══ EQUIPE / FUNDADORES ═══ -->
+    <section id="equipe" class="section team-section" aria-labelledby="equipe-title">
       <div class="container">
-        <div class="section-header">
-          <div>
-            <span class="tag">Equipe</span>
-            <h2 id="fundadores-title">Conheça os criadores</h2>
-          </div>
-          <p>Três profissionais que transformaram paixão em expertise.</p>
+        <div class="section-header animate">
+          <span class="tag">Equipe fundadora</span>
+          <h2 id="equipe-title">Conheça quem faz a <span>Alpha Nutri</span></h2>
+          <p>Uma equipe multidisciplinar que une administração, consultoria, economia e desenvolvimento humano para entregar excelência em cada detalhe.</p>
         </div>
-        <div class="founders-grid">
-          <article class="founder-card">
-            <img src="img/founder_ana.jpg" alt="Ana Silva – CEO" loading="lazy" width="300" height="300" />
-            <h3>Ana Silva</h3>
-            <p><strong>Bioquímica (USP)</strong> – CEO &amp; Estratégia de Produto. Testa cada lote pessoalmente para garantir pureza.</p>
+
+        <div class="team-grid">
+          <article class="team-card animate delay-1">
+            <img src="img/team_maria.svg" alt="Maria Heloísa" width="100" height="100" loading="lazy" />
+            <h3>Maria Heloísa</h3>
+            <div class="role">Administração de Materiais e Patrimônio</div>
+            <p>Responsável pela gestão estratégica de materiais, controle de estoque e patrimônio da Alpha Nutri. Garante que cada produto chegue ao cliente com a máxima qualidade e eficiência logística.</p>
           </article>
-          <article class="founder-card">
-            <img src="img/founder_rafael.jpg" alt="Rafael Mendes – Diretor de P&D" loading="lazy" width="300" height="300" />
-            <h3>Rafael Mendes</h3>
-            <p><strong>Educação Física (UFC)</strong> – Diretor de Pesquisa &amp; Desenvolvimento. Busca fórmulas que realmente entregam resultados.</p>
+
+          <article class="team-card animate delay-2">
+            <img src="img/team_deyvid.svg" alt="Deyvid Ivson" width="100" height="100" loading="lazy" />
+            <h3>Deyvid Ivson</h3>
+            <div class="role">Consultor Organizacional</div>
+            <p>Especialista em diagnóstico e reestruturação organizacional. Atua na otimização de processos internos, planejamento estratégico e gestão de pessoas para manter a Alpha Nutri competitiva e eficiente.</p>
           </article>
-          <article class="founder-card">
-            <img src="img/founder_mariana.jpg" alt="Mariana Costa – CMO" loading="lazy" width="300" height="300" />
-            <h3>Mariana Costa</h3>
-            <p><strong>Marketing (FGV)</strong> – CMO &amp; Comunicação. Traduz ciência em mensagens claras e inspiradoras.</p>
+
+          <article class="team-card animate delay-3">
+            <img src="img/team_ana.svg" alt="Ana Beatriz" width="100" height="100" loading="lazy" />
+            <h3>Ana Beatriz</h3>
+            <div class="role">Consultora Organizacional</div>
+            <p>Focada em cultura organizacional e melhoria contínua. Desenvolve estratégias para alinhar equipe, processos e resultados, assegurando que a Alpha Nutri cresça de forma sustentável.</p>
+          </article>
+
+          <article class="team-card animate delay-4">
+            <img src="img/team_daniela.svg" alt="Daniela" width="100" height="100" loading="lazy" />
+            <h3>Daniela</h3>
+            <div class="role">Economia &amp; Finanças</div>
+            <p>Responsável pela análise econômica e financeira da empresa. Cuida do planejamento orçamentário, análise de viabilidade e estratégias de precificação para garantir a saúde financeira do negócio.</p>
+          </article>
+
+          <article class="team-card animate delay-5">
+            <img src="img/team_valdilene.svg" alt="Valdilene Paula" width="100" height="100" loading="lazy" />
+            <h3>Valdilene Paula</h3>
+            <div class="role">Economia &amp; Finanças</div>
+            <p>Atua em conjunto na área econômica, com foco em análise de mercado, projeções financeiras e sustentabilidade econômica. Garante que a Alpha Nutri tome decisões baseadas em dados sólidos.</p>
+          </article>
+
+          <article class="team-card animate delay-6">
+            <img src="img/team_jaiany.svg" alt="Jaiany Carolayne" width="100" height="100" loading="lazy" />
+            <h3>Jaiany Carolayne</h3>
+            <div class="role">Treinamento &amp; Desenvolvimento</div>
+            <p>Especialista no desenvolvimento de soft skills e hard skills da equipe. Cria programas de capacitação, treinamentos e workshops para que cada colaborador alcance seu máximo potencial.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- PRODUTOS -->
-    <section id="produtos" class="products section" aria-labelledby="products-title">
+    <!-- ═══ POR QUE ALPHA NUTRI ═══ -->
+    <section class="section why-section" aria-labelledby="why-title">
       <div class="container">
-        <div class="section-header">
-          <div>
-            <span class="tag">Mais vendidos</span>
-            <h2 id="products-title">Destaques</h2>
-          </div>
+        <div class="section-header animate">
+          <span class="tag">Nossos diferenciais</span>
+          <h2 id="why-title">Por que escolher a <span>Alpha Nutri</span></h2>
+          <p>Qualidade, procedência e cuidado com sua saúde em cada detalhe.</p>
+        </div>
+
+        <div class="pillars">
+          <article class="pillar animate delay-1">
+            <div class="pillar-icon">🏆</div>
+            <h3>Qualidade Certificada</h3>
+            <p>Suplementos e vitaminas com procedência, pureza e segurança comprovadas. Trabalhamos apenas com marcas certificadas pela ANVISA.</p>
+          </article>
+          <article class="pillar animate delay-2">
+            <div class="pillar-icon">🌿</div>
+            <h3>Natural e Eficaz</h3>
+            <p>Formulações naturais pensadas para a saúde a longo prazo. Sem atalhos, sem comprometer seu bem‑estar.</p>
+          </article>
+          <article class="pillar animate delay-3">
+            <div class="pillar-icon">👩‍⚕️</div>
+            <h3>Orientação Profissional</h3>
+            <p>Acompanhamento nutricional personalizado. Porque cada organismo é único e merece atenção especial.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ PRODUTOS ═══ -->
+    <section id="produtos" class="section products-section" aria-labelledby="products-title">
+      <div class="container">
+        <div class="section-header animate">
+          <span class="tag">Mais vendidos</span>
+          <h2 id="products-title"><span>Destaques</span></h2>
           <p>Os suplementos mais procurados pelos nossos clientes.</p>
         </div>
-        <div class="products-carousel"><div class="products-grid">
-          <article class="product-card animate">
+
+        <div class="products-grid">
+          <article class="product-card animate delay-1">
             <div class="product-img-wrap">
-              <img src="img/vitamina D.jpeg" alt="Frasco de Vitamina D Alpha Nutri" width="400" height="240" loading="lazy" />
+              <img src="img/vitamina D.jpeg" alt="Vitamina D Alpha Nutri" width="400" height="220" loading="lazy" />
               <span class="product-cat">Vitaminas</span>
             </div>
             <div class="product-body">
-              <h3>Vitamina D</h3>
-              <p>Suporte à saúde óssea, imunidade fortalecida e mais energia no dia a dia.</p>
+              <h3>Vitamina D</h3>
+              <p>Suporte à saúde óssea, imunidade fortalecida e mais disposição no dia a dia.</p>
               <div class="product-foot">
-                <span class="price" aria-label="Preço: R$ 49,90">R$ 49,90</span>
-                <a class="btn btn-violet btn-sm" href="#contato" aria-label="Comprar Vitamina D">Comprar</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card animate delay-1">
-            <div class="product-img-wrap">
-              <img src="img/whey protein.jpeg" alt="Pote de Whey Protein Alpha Nutri" width="400" height="240" loading="lazy" />
-              <span class="product-cat">Proteínas</span>
-            </div>
-            <div class="product-body">
-              <h3>Whey Protein</h3>
-              <p>Proteína de rápida absorção, ideal para recuperação muscular pós‑treino.</p>
-              <div class="product-foot">
-                <span class="price" aria-label="Preço: R$ 129,90">R$ 129,90</span>
-                <a class="btn btn-violet btn-sm" href="#contato" aria-label="Comprar Whey Protein">Comprar</a>
+                <span class="price">R$ 49,90</span>
+                <a class="btn btn-purple btn-sm" href="#contato">Comprar</a>
               </div>
             </div>
           </article>
 
           <article class="product-card animate delay-2">
             <div class="product-img-wrap">
-              <img src="img/termogenico.jpeg" alt="Termogênico Natural Alpha Nutri" width="400" height="240" loading="lazy" />
+              <img src="img/whey protein.jpeg" alt="Whey Protein Alpha Nutri" width="400" height="220" loading="lazy" />
+              <span class="product-cat">Proteínas</span>
+            </div>
+            <div class="product-body">
+              <h3>Whey Protein</h3>
+              <p>Proteína de rápida absorção, ideal para recuperação muscular pós‑treino.</p>
+              <div class="product-foot">
+                <span class="price">R$ 129,90</span>
+                <a class="btn btn-purple btn-sm" href="#contato">Comprar</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card animate delay-3">
+            <div class="product-img-wrap">
+              <img src="img/termogenico.jpeg" alt="Termogênico Alpha Nutri" width="400" height="220" loading="lazy" />
               <span class="product-cat">Termogênicos</span>
             </div>
             <div class="product-body">
               <h3>Termogênico Natural</h3>
-              <p>Estimula o metabolismo, fornece energia sustentada e foco durante os treinos.</p>
+              <p>Estimula o metabolismo, energia sustentada e foco durante os treinos.</p>
               <div class="product-foot">
-                <span class="price" aria-label="Preço: R$ 89,90">R$ 89,90</span>
-                <a class="btn btn-violet btn-sm" href="#contato" aria-label="Comprar Termogênico">Comprar</a>
+                <span class="price">R$ 89,90</span>
+                <a class="btn btn-purple btn-sm" href="#contato">Comprar</a>
               </div>
             </div>
           </article>
@@ -195,40 +279,39 @@
       </div>
     </section>
 
-    <!-- SERVIÇOS -->
-    <section id="servicos" class="services section" aria-labelledby="services-title">
+    <!-- ═══ SERVIÇOS ═══ -->
+    <section id="servicos" class="section services-section" aria-labelledby="services-title">
       <div class="container">
-        <div class="section-header">
-          <div>
-            <span class="tag">Nossos serviços</span>
-            <h2 id="services-title">Como podemos<br/>ajudar você</h2>
-          </div>
+        <div class="section-header animate">
+          <span class="tag">Nossos serviços</span>
+          <h2 id="services-title">Como podemos <span>ajudar você</span></h2>
           <p>Soluções completas para sua saúde e performance.</p>
         </div>
+
         <div class="services-grid">
-          <article class="service-card animate">
-            <img src="img/Consulta Nutricional.jpg" class="service-img" alt="Nutricionista realizando consulta" width="400" height="200" loading="lazy" />
+          <article class="service-card animate delay-1">
+            <img src="img/Consulta Nutricional.jpg" class="service-img" alt="Consulta Nutricional" width="400" height="180" loading="lazy" />
             <div class="service-body">
               <h3>Consulta Nutricional</h3>
-              <p>Avaliação individualizada e plano nutricional sob medida para seus objetivos.</p>
+              <p>Avaliação individualizada e plano nutricional sob medida para seus objetivos de saúde e performance.</p>
               <a class="service-link" href="#contato">Agendar consulta</a>
             </div>
           </article>
 
-          <article class="service-card animate delay-1">
-            <img src="img/Plano de Suplementação.jpeg" class="service-img" alt="Profissional elaborando plano de suplementação" width="400" height="200" loading="lazy" />
+          <article class="service-card animate delay-2">
+            <img src="img/Plano de Suplementação.jpeg" class="service-img" alt="Plano de Suplementação" width="400" height="180" loading="lazy" />
             <div class="service-body">
               <h3>Plano de Suplementação</h3>
-              <p>Estrategias personalizadas de suplementos, alinhadas ao seu perfil e metas.</p>
+              <p>Estratégias personalizadas de suplementos, alinhadas ao seu perfil, metas e rotina de treino.</p>
               <a class="service-link" href="#contato">Saiba mais</a>
             </div>
           </article>
 
-          <article class="service-card animate delay-2">
-            <img src="img/Assessoria Corporativa.jpg" class="service-img" alt="Assessoria corporativa de saúde" width="400" height="200" loading="lazy" />
+          <article class="service-card animate delay-3">
+            <img src="img/Assessoria Corporativa.jpg" class="service-img" alt="Assessoria Corporativa" width="400" height="180" loading="lazy" />
             <div class="service-body">
               <h3>Assessoria Corporativa</h3>
-              <p>Programas de qualidade de vida para empresas que valorizam o capital humano.</p>
+              <p>Programas de qualidade de vida para empresas que investem no capital humano e bem‑estar dos colaboradores.</p>
               <a class="service-link" href="#contato">Fale conosco</a>
             </div>
           </article>
@@ -236,18 +319,78 @@
       </div>
     </section>
 
-    <!-- CONTATO -->
-    <section id="contato" class="contact section" aria-labelledby="contact-title">
+    <!-- ═══ DADOS DA EMPRESA ═══ -->
+    <section id="empresa" class="section company-section" aria-labelledby="empresa-title">
       <div class="container">
-        <div class="section-header">
-          <div>
-            <span class="tag">Atendimento</span>
-            <h2 id="contact-title">Fale conosco</h2>
-          </div>
-          <p>Resposta em até 24 h. Sem compromisso.</p>
+        <div class="section-header animate">
+          <span class="tag">Dados da empresa</span>
+          <h2 id="empresa-title">Alpha <span>Nutri</span></h2>
+          <p>Transparência e confiança: conheça os dados oficiais da nossa empresa.</p>
         </div>
+
+        <div class="company-grid">
+          <div class="company-card animate delay-1">
+            <h3>📍 Localização</h3>
+            <p><strong>Endereço:</strong> Av. Caxangá, Nº 262 — Recife, PE</p>
+            <p><strong>CEP:</strong> 50000‑000</p>
+            <p><strong>Horário:</strong> Seg a Sex: 08h–18h | Sáb: 08h–13h</p>
+          </div>
+          <div class="company-card animate delay-2">
+            <h3>📞 Contato</h3>
+            <p><strong>Telefone:</strong> (81) 3003‑6212</p>
+            <p><strong>WhatsApp:</strong> (81) 99999‑0000</p>
+            <p><strong>E‑mail:</strong> contato@alphanutri.com.br</p>
+          </div>
+          <div class="company-card animate delay-3">
+            <h3>🏢 Dados jurídicos</h3>
+            <p><strong>Razão Social:</strong> Alpha Nutri Suplementos LTDA</p>
+            <p><strong>CNPJ:</strong> 00.000.000/0001‑00</p>
+            <p><strong>Inscrição Estadual:</strong> Isenta</p>
+          </div>
+          <div class="company-card animate delay-4">
+            <h3>🌐 Redes sociais</h3>
+            <ul>
+              <li>Instagram: @alphanutri</li>
+              <li>Facebook: /alphanutri</li>
+              <li>LinkedIn: /company/alphanutri</li>
+              <li>YouTube: /alphanutri</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CONTATO ═══ -->
+    <section id="contato" class="section contact-section" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section-header animate">
+          <span class="tag">Atendimento</span>
+          <h2 id="contact-title">Fale <span>conosco</span></h2>
+          <p>Tire suas dúvidas, agende consultas ou faça seu pedido. Resposta em até 24h.</p>
+        </div>
+
         <div class="contact-layout">
-          <form class="contact-form-box" id="contact-form" novalidate aria-label="Formulário de contato">
+          <div class="contact-info animate delay-1">
+            <h3>Estamos prontos para ajudar</h3>
+            <div class="info-item">
+              <div class="info-icon">📍</div>
+              <p>Av. Caxangá, Nº 262 — Recife, PE</p>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">📞</div>
+              <p>(81) 3003‑6212</p>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">📧</div>
+              <p>contato@alphanutri.com.br</p>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">🕐</div>
+              <p>Seg–Sex: 08h–18h | Sáb: 08h–13h</p>
+            </div>
+          </div>
+
+          <form class="contact-form-box animate delay-2" id="contact-form" novalidate>
             <div class="form-row">
               <div class="field">
                 <label for="nome">Nome</label>
@@ -261,10 +404,10 @@
             <div class="form-row">
               <div class="field full-width">
                 <label for="mensagem">Mensagem</label>
-                <textarea id="mensagem" name="mensagem" rows="4" placeholder="Sua mensagem..." required></textarea>
+                <textarea id="mensagem" name="mensagem" rows="5" placeholder="Como podemos ajudar?" required></textarea>
               </div>
             </div>
-            <button type="submit" class="btn btn-lime">Enviar</button>
+            <button type="submit" class="btn btn-green">Enviar mensagem</button>
           </form>
         </div>
       </div>
@@ -272,9 +415,11 @@
 
   </main>
 
+  <!-- ═══ FOOTER ═══ -->
   <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2026 Alpha Nutri – Todos os direitos reservados.</p>
+    <div class="container footer-inner">
+      <p>&copy; <span id="year">2026</span> Alpha Nutri — Todos os direitos reservados.</p>
+      <p>Feito com 💚 em Recife, PE</p>
     </div>
   </footer>
 
