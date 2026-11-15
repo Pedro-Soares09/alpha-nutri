@@ -17,6 +17,126 @@
 /* ─── 1. MENU MOBILE ─────────────────────────────────── */
 (function initMenu() {
   const btnMenu = document.getElementById('btn-menu');
+  const nav = document.getElementById('main-nav');
+  if (!btnMenu || !nav) return;
+
+  btnMenu.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    btnMenu.setAttribute('aria-expanded', isOpen);
+    btnMenu.textContent = isOpen ? '✕' : '☰';
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      btnMenu.setAttribute('aria-expanded', false);
+      btnMenu.textContent = '☰';
+      document.body.style.overflow = '';
+    });
+  });
+
+  document.addEventListener('click', e => {
+    if (!nav.contains(e.target) && !btnMenu.contains(e.target)) {
+      nav.classList.remove('open');
+      btnMenu.setAttribute('aria-expanded', false);
+      btnMenu.textContent = '☰';
+      document.body.style.overflow = '';
+    }
+  });
+})();
+
+/* Existing code continues … */
+
+/* ─── 8. THEME TOGGLE ───────────────────── */
+(function initThemeToggle() {
+  const toggle = document.getElementById('theme-toggle');
+  if (!toggle) return;
+  const root = document.documentElement;
+  const stored = localStorage.getItem('theme');
+  if (stored === 'dark') root.classList.add('dark-theme');
+  toggle.addEventListener('click', () => {
+    const isDark = root.classList.toggle('dark-theme');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    toggle.textContent = isDark ? '☀️' : '🌙';
+  });
+})();
+
+/* ─── 9. STICKY HEADER ───────────────────── */
+(function initStickyHeader() {
+  const header = document.querySelector('.site-header');
+  if (!header) return;
+  const onScroll = () => {
+    if (window.scrollY > 0) header.classList.add('sticky');
+    else header.classList.remove('sticky');
+  };
+  window.addEventListener('scroll', onScroll);
+  onScroll();
+})();
+
+/* ─── 10. PRODUCTS CAROUSEL ───────────────── */
+(function initCarousel() {
+  const carousel = document.querySelector('.products-carousel');
+  const track = carousel?.querySelector('.products-grid');
+  const prevBtn = document.createElement('button');
+  const nextBtn = document.createElement('button');
+  if (!carousel || !track) return;
+  prevBtn.textContent = '‹';
+  nextBtn.textContent = '›';
+  prevBtn.className = 'carousel-prev';
+  nextBtn.className = 'carousel-next';
+  const nav = document.createElement('div');
+  nav.className = 'carousel-nav';
+  nav.appendChild(prevBtn);
+  nav.appendChild(nextBtn);
+  carousel.appendChild(nav);
+
+  let index = 0;
+  const slideWidth = () => track.firstElementChild.getBoundingClientRect().width;
+  const update = () => {
+    const offset = -index * slideWidth();
+    track.style.transform = `translateX(${offset}px)`;
+  };
+  const total = track.children.length;
+  const showPrev = () => { if (index > 0) { index--; update(); } };
+  const showNext = () => { if (index < total - 1) { index++; update(); } };
+  prevBtn.addEventListener('click', showPrev);
+  nextBtn.addEventListener('click', showNext);
+  window.addEventListener('resize', update);
+})();
+
+(function initMenu() {
+  const btnMenu = document.getElementById('btn-menu');
+  const nav = document.getElementById('main-nav');
+  if (!btnMenu || !nav) return;
+
+  btnMenu.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    btnMenu.setAttribute('aria-expanded', isOpen);
+    btnMenu.textContent = isOpen ? '✕' : '☰';
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      btnMenu.setAttribute('aria-expanded', false);
+      btnMenu.textContent = '☰';
+      document.body.style.overflow = '';
+    });
+  });
+
+  document.addEventListener('click', e => {
+    if (!nav.contains(e.target) && !btnMenu.contains(e.target)) {
+      nav.classList.remove('open');
+      btnMenu.setAttribute('aria-expanded', false);
+      btnMenu.textContent = '☰';
+      document.body.style.overflow = '';
+    }
+  });
+})();
+(function initMenu() {
+  const btnMenu = document.getElementById('btn-menu');
   const nav     = document.getElementById('main-nav');
   if (!btnMenu || !nav) return;
 
