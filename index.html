@@ -1,561 +1,271 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#0d0418">
-  <title>Alpha Nutri | Suplementos e orientação nutricional em Recife</title>
-  <meta name="description"
-    content="Alpha Nutri: suplementos de procedência certificada, vitaminas e acompanhamento nutricional personalizado em Recife, PE.">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="pt_BR">
-  <meta property="og:title" content="Alpha Nutri | Suplementos e orientação nutricional em Recife">
-  <meta property="og:description"
-    content="Suplementos certificados e acompanhamento nutricional personalizado em Recife.">
-  <meta property="og:image" content="img/produtos.jpeg">
-  <link rel="icon" type="image/jpeg" href="img/logo.jpeg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=5">
-  <script>document.documentElement.classList.add('js'); try { var t = localStorage.getItem('alphanutri_theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t } catch (e) { }</script>
-  <script
-    type="application/ld+json">{"@context": "https://schema.org", "@type": "Store", "name": "Alpha Nutri", "description": "Suplementos de procedência certificada, vitaminas e orientação nutricional personalizada em Recife, PE.", "url": "https://www.alphanutri.com.br/", "image": "https://www.alphanutri.com.br/img/logo.jpeg", "telephone": "+55-81-3003-6212", "email": "contato@alphanutri.com.br", "priceRange": "$$", "address": {"@type": "PostalAddress", "streetAddress": "Av. Caxangá, 262", "addressLocality": "Recife", "addressRegion": "PE", "postalCode": "50000-000", "addressCountry": "BR"}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "18:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "13:00"}], "areaServed": "Recife e Nordeste do Brasil", "sameAs": ["https://www.instagram.com/alphanutri", "https://www.facebook.com/alphanutri", "https://www.linkedin.com/company/alphanutri", "https://www.youtube.com/alphanutri"]}</script>
-  <script
-    type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Onde fica a Alpha Nutri e qual é o horário de atendimento?", "acceptedAnswer": {"@type": "Answer", "text": "Estamos na Av. Caxangá, 262, em Recife, PE. Atendemos de segunda a sexta, das 8h às 18h, e aos sábados, das 8h às 13h."}}, {"@type": "Question", "name": "Os suplementos são certificados pela ANVISA?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Trabalhamos apenas com marcas certificadas pela ANVISA e de procedência comprovada."}}, {"@type": "Question", "name": "Como agendo uma consulta nutricional?", "acceptedAnswer": {"@type": "Answer", "text": "Use o formulário de contato, chame no WhatsApp ou ligue para (81) 3003-6212. Respondemos em até 24 horas."}}, {"@type": "Question", "name": "Vocês atendem online?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Fazemos consultorias virtuais e atendemos clientes de todo o Nordeste pelo e-commerce."}}, {"@type": "Question", "name": "Posso usar suplementos sem acompanhamento?", "acceptedAnswer": {"@type": "Answer", "text": "O ideal é ter uma avaliação individual antes de começar. Nosso plano de suplementação é montado de acordo com seu perfil, suas metas e sua rotina de treino."}}, {"@type": "Question", "name": "Vocês oferecem programas para empresas?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. A assessoria corporativa reúne programas de qualidade de vida para empresas que investem no bem-estar dos colaboradores."}}]}</script>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.google.com; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d0418">
+<title>Alpha Nutri | Suplementos e orientação nutricional em Recife</title>
+<meta name="description" content="Alpha Nutri: suplementos de procedência certificada, vitaminas e acompanhamento nutricional personalizado em Recife, PE.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Alpha Nutri | Suplementos e orientação nutricional em Recife">
+<meta property="og:description" content="Suplementos certificados e acompanhamento nutricional personalizado em Recife.">
+<meta property="og:image" content="img/produtos.jpeg">
+<link rel="icon" type="image/jpeg" href="img/logo.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=7">
+<script src="js/init.js"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Store", "name": "Alpha Nutri", "description": "Suplementos de procedência certificada, vitaminas e orientação nutricional personalizada em Recife, PE.", "url": "https://www.alphanutri.com.br/", "image": "https://www.alphanutri.com.br/img/logo.jpeg", "telephone": "+55-81-3003-6212", "email": "contato@alphanutri.com.br", "priceRange": "$$", "address": {"@type": "PostalAddress", "streetAddress": "Av. Caxangá, 262", "addressLocality": "Recife", "addressRegion": "PE", "postalCode": "50000-000", "addressCountry": "BR"}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "18:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "13:00"}], "areaServed": "Recife e Nordeste do Brasil", "sameAs": ["https://www.instagram.com/alphanutri", "https://www.facebook.com/alphanutri", "https://www.linkedin.com/company/alphanutri", "https://www.youtube.com/alphanutri"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Onde fica a Alpha Nutri e qual é o horário de atendimento?", "acceptedAnswer": {"@type": "Answer", "text": "Estamos na Av. Caxangá, 262, em Recife, PE. Atendemos de segunda a sexta, das 8h às 18h, e aos sábados, das 8h às 13h."}}, {"@type": "Question", "name": "Os suplementos são certificados pela ANVISA?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Trabalhamos apenas com marcas certificadas pela ANVISA e de procedência comprovada."}}, {"@type": "Question", "name": "Como agendo uma consulta nutricional?", "acceptedAnswer": {"@type": "Answer", "text": "Use o formulário de contato, chame no WhatsApp ou ligue para (81) 3003-6212. Respondemos em até 24 horas."}}, {"@type": "Question", "name": "Vocês atendem online?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Fazemos consultorias virtuais e atendemos clientes de todo o Nordeste pelo e-commerce."}}, {"@type": "Question", "name": "Posso usar suplementos sem acompanhamento?", "acceptedAnswer": {"@type": "Answer", "text": "O ideal é ter uma avaliação individual antes de começar. Nosso plano de suplementação é montado de acordo com seu perfil, suas metas e sua rotina de treino."}}, {"@type": "Question", "name": "Vocês oferecem programas para empresas?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. A assessoria corporativa reúne programas de qualidade de vida para empresas que investem no bem-estar dos colaboradores."}}]}</script>
 </head>
-
 <body>
-  <a class="skip-link" href="#main">Pular para o conteúdo</a>
-  <div class="progress" aria-hidden="true"><i></i></div>
+<a class="skip-link" href="#main">Pular para o conteúdo</a>
+<div class="progress" aria-hidden="true"><i></i></div>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#home" aria-label="Alpha Nutri, início">
-        <img src="img/logo.jpeg" alt="" width="40" height="40">
-        <span>Alpha<b>Nutri</b></span>
-      </a>
-      <nav class="main-nav" id="main-nav" aria-label="Menu principal">
-        <ul>
-          <li><a href="#home">Início</a></li>
-          <li><a href="#produtos">Produtos</a></li>
-          <li><a href="#servicos">Serviços</a></li>
-          <li><a href="#quiz">Quiz</a></li>
-          <li><a href="#historia">História</a></li>
-          <li><a href="#equipe">Equipe</a></li>
-          <li><a href="#faq">Dúvidas</a></li>
-          <li><a href="#contato" class="nav-cta">Fale conosco</a></li>
-        </ul>
-      </nav>
-      <div class="tools">
-        <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false"
-          aria-label="Ativar tema claro"><svg viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2" />
-            <path d="M12 4a8 8 0 0 0 0 16z" fill="currentColor" />
-          </svg></button>
-        <button class="btn-menu" id="btn-menu" aria-expanded="false" aria-controls="main-nav"
-          aria-label="Abrir menu"><span></span><span></span></button>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#home" aria-label="Alpha Nutri, início">
+      <img src="img/logo.jpeg" alt="" width="40" height="40">
+      <span>Alpha<b>Nutri</b></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="Menu principal">
+      <ul>
+        <li><a href="#home">Início</a></li>
+        <li><a href="#produtos">Produtos</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#quiz">Quiz</a></li>
+        <li><a href="#historia">História</a></li>
+        <li><a href="#equipe">Equipe</a></li>
+        <li><a href="#faq">Dúvidas</a></li>
+        <li><a href="#contato" class="nav-cta">Fale conosco</a></li>
+      </ul>
+    </nav>
+    <div class="tools">
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" aria-label="Ativar tema claro"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 4a8 8 0 0 0 0 16z" fill="currentColor"/></svg></button>
+      <button class="btn-menu" id="btn-menu" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menu"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section id="home" class="hero">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <h1 aria-label="Nutrição de performance, com orientação de verdade.">
+        <span class="line"><span>Nutrição de</span></span>
+        <span class="line"><span>performance,</span></span>
+        <span class="line g"><span>com orientação</span></span>
+        <span class="line g"><span>de verdade.</span></span>
+      </h1>
+      <p class="hero-desc rv">Suplementos de procedência certificada e acompanhamento nutricional individual para quem treina, cuida da saúde e quer resultado sustentável. Atendemos em Recife desde 2016.</p>
+      <div class="hero-actions rv">
+        <a class="btn btn-green" href="#produtos">Ver produtos</a>
+        <a class="btn btn-ghost" href="#contato">Agendar consulta</a>
       </div>
     </div>
-  </header>
+    <div class="hero-stage rv">
+      <div class="stage-ring" data-depth="0.04"></div>
+      <img src="img/produtos.jpeg" alt="Linha de suplementos Alpha Nutri" width="420" height="525" data-depth="0.02" fetchpriority="high">
+      <p class="stage-tag">Marcas certificadas pela ANVISA</p>
+    </div>
+  </div>
+  <div class="container stats">
+    <div><strong data-count="10" data-suffix="+">10+</strong><span>anos de mercado</span></div>
+    <div><strong data-count="3" data-suffix="mil+">3mil+</strong><span>clientes atendidos</span></div>
+    <div><strong data-count="200" data-suffix="+">200+</strong><span>produtos no catálogo</span></div>
+  </div>
+</section>
 
-  <main id="main">
-    <section id="home" class="hero">
-      <div class="container hero-inner">
-        <div class="hero-text">
-          <h1 aria-label="Nutrição de performance, com orientação de verdade.">
-            <span class="line"><span>Nutrição de</span></span>
-            <span class="line"><span>performance,</span></span>
-            <span class="line g"><span>com orientação</span></span>
-            <span class="line g"><span>de verdade.</span></span>
-          </h1>
-          <p class="hero-desc rv">Suplementos de procedência certificada e acompanhamento nutricional individual para
-            quem treina, cuida da saúde e quer resultado sustentável. Atendemos em Recife desde 2016.</p>
-          <div class="hero-actions rv">
-            <a class="btn btn-green" href="#produtos">Ver produtos</a>
-            <a class="btn btn-ghost" href="#contato">Agendar consulta</a>
-          </div>
-        </div>
-        <div class="hero-stage rv">
-          <div class="stage-ring" data-depth="0.04"></div>
-          <img src="img/produtos.jpeg" alt="Linha de suplementos Alpha Nutri" width="420" height="525" data-depth="0.02"
-            fetchpriority="high">
-          <p class="stage-tag">Marcas certificadas pela ANVISA</p>
-        </div>
-      </div>
-      <div class="container stats">
-        <div><strong data-count="10" data-suffix="+">10+</strong><span>anos de mercado</span></div>
-        <div><strong data-count="3" data-suffix="mil+">3mil+</strong><span>clientes atendidos</span></div>
-        <div><strong data-count="200" data-suffix="+">200+</strong><span>produtos no catálogo</span></div>
-      </div>
-    </section>
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>Whey Protein</span><span>Vitaminas</span><span>Termogênicos</span><span>Produtos naturais</span><span>Plano de suplementação</span><span>Consulta nutricional</span>
+    <span>Whey Protein</span><span>Vitaminas</span><span>Termogênicos</span><span>Produtos naturais</span><span>Plano de suplementação</span><span>Consulta nutricional</span>
+  </div>
+</div>
 
-    <div class="marquee" aria-hidden="true">
-      <div class="track">
-        <span>Whey Protein</span><span>Vitaminas</span><span>Termogênicos</span><span>Produtos
-          naturais</span><span>Plano de suplementação</span><span>Consulta nutricional</span>
-        <span>Whey Protein</span><span>Vitaminas</span><span>Termogênicos</span><span>Produtos
-          naturais</span><span>Plano de suplementação</span><span>Consulta nutricional</span>
+<section class="section pillars-section">
+  <div class="container">
+    <div class="section-header rv"><h2>Por que escolher a Alpha Nutri</h2><p>Qualidade, procedência e cuidado com a sua saúde em cada detalhe.</p></div>
+    <div class="pillars">
+      <article class="pillar spot rv"><h3>Qualidade certificada</h3><p>Suplementos e vitaminas com procedência, pureza e segurança comprovadas. Trabalhamos apenas com marcas certificadas pela ANVISA.</p></article>
+      <article class="pillar spot rv"><h3>Formulações eficazes</h3><p>Fórmulas pensadas para a saúde a longo prazo, sem atalhos e sem comprometer o seu bem-estar.</p></article>
+      <article class="pillar spot rv"><h3>Orientação profissional</h3><p>Acompanhamento nutricional personalizado, porque cada organismo é único e merece atenção especial.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="produtos" class="section">
+  <div class="container">
+    <div class="section-header rv"><h2>Mais vendidos</h2><p>Os suplementos mais procurados pelos nossos clientes.</p></div>
+    <div class="products-grid">
+      <article class="product-card spot rv">
+        <div class="media"><img src="img/vitamina D.jpeg" alt="Vitamina D Alpha Nutri" width="400" height="260" loading="lazy"><span class="chip">Vitaminas</span></div>
+        <div class="body"><h3>Vitamina D</h3><p>Suporte à saúde óssea, imunidade fortalecida e mais disposição no dia a dia.</p>
+        <div class="foot"><span class="price">R$ 49,90</span><a class="btn btn-green btn-sm" href="#contato">Comprar</a></div></div>
+      </article>
+      <article class="product-card spot rv">
+        <div class="media"><img src="img/whey protein.jpeg" alt="Whey Protein Alpha Nutri" width="400" height="260" loading="lazy"><span class="chip">Proteínas</span></div>
+        <div class="body"><h3>Whey Protein</h3><p>Proteína de rápida absorção, ideal para a recuperação muscular pós-treino.</p>
+        <div class="foot"><span class="price">R$ 129,90</span><a class="btn btn-green btn-sm" href="#contato">Comprar</a></div></div>
+      </article>
+      <article class="product-card spot rv">
+        <div class="media"><img src="img/termogenico.jpeg" alt="Termogênico Alpha Nutri" width="400" height="260" loading="lazy"><span class="chip">Termogênicos</span></div>
+        <div class="body"><h3>Termogênico Natural</h3><p>Estimula o metabolismo, com energia sustentada e foco durante os treinos.</p>
+        <div class="foot"><span class="price">R$ 89,90</span><a class="btn btn-green btn-sm" href="#contato">Comprar</a></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="servicos" class="section alt">
+  <div class="container">
+    <div class="section-header rv"><h2>Como podemos ajudar você</h2><p>Soluções completas para sua saúde e performance.</p></div>
+    <div class="services-grid">
+      <article class="service-card spot rv"><img src="img/Consulta Nutricional.jpg" alt="Consulta nutricional" width="400" height="200" loading="lazy"><div class="body"><h3>Consulta nutricional</h3><p>Avaliação individual e plano alimentar sob medida para seus objetivos.</p><a class="link" href="#contato">Agendar consulta</a></div></article>
+      <article class="service-card spot rv"><img src="img/Plano de Suplementação.jpeg" alt="Plano de suplementação" width="400" height="200" loading="lazy"><div class="body"><h3>Plano de suplementação</h3><p>Estratégia de suplementos alinhada ao seu perfil, metas e rotina de treino.</p><a class="link" href="#contato">Saiba mais</a></div></article>
+      <article class="service-card spot rv"><img src="img/Assessoria Corporativa.jpg" alt="Assessoria corporativa" width="400" height="200" loading="lazy"><div class="body"><h3>Assessoria corporativa</h3><p>Programas de qualidade de vida para empresas que investem em seus colaboradores.</p><a class="link" href="#contato">Fale conosco</a></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="quiz" class="section">
+  <div class="container">
+    <div class="section-header rv"><h2>Qual suplemento combina com você?</h2><p>Responda 4 perguntas rápidas e receba uma recomendação inicial. Leva menos de um minuto.</p></div>
+    <div class="quiz rv">
+      <div class="q-progress" aria-hidden="true"><i id="quiz-bar"></i></div>
+      <div id="quiz-stage"></div>
+      <noscript><p>Ative o JavaScript para usar o quiz ou fale com a gente pelo WhatsApp.</p></noscript>
+    </div>
+  </div>
+</section>
+
+<section id="calculadoras" class="section alt">
+  <div class="container">
+    <div class="section-header rv"><h2>Calcule suas necessidades</h2><p>IMC, proteína e água diária em um só lugar. Os resultados são estimativas gerais.</p></div>
+    <div class="calc">
+      <form class="calc-form rv" id="calc-form" novalidate>
+        <div class="field"><label for="c-peso">Peso (kg)</label><input id="c-peso" type="number" inputmode="decimal" min="30" max="300" step="0.1" placeholder="Ex.: 72"></div>
+        <div class="field"><label for="c-altura">Altura (cm)</label><input id="c-altura" type="number" inputmode="numeric" min="120" max="230" step="1" placeholder="Ex.: 175"></div>
+        <div class="field"><label for="c-obj">Objetivo</label><select id="c-obj"><option value="saude">Saúde em geral</option><option value="massa">Ganhar massa muscular</option><option value="emagrecer">Emagrecer</option></select></div>
+        <div class="field"><label for="c-treino">Treino por dia</label><select id="c-treino"><option value="0">Não treino</option><option value="0.5">30 minutos</option><option value="1" selected>1 hora</option><option value="1.5">1h30</option><option value="2">2 horas ou mais</option></select></div>
+      </form>
+      <div class="calc-out rv" aria-live="polite">
+        <div class="res"><span>IMC</span><strong id="o-imc">--</strong><small id="o-imc-n">Informe peso e altura.</small></div>
+        <div class="res"><span>Proteína por dia</span><strong id="o-prot">--</strong><small>Faixa estimada para o seu objetivo.</small></div>
+        <div class="res"><span>Água por dia</span><strong id="o-agua">--</strong><small>Inclui a reposição do treino.</small></div>
+        <button type="button" class="btn btn-green" id="calc-cta" disabled>Receber orientação personalizada</button>
+        <p class="note">Estimativas gerais, sem caráter de diagnóstico. Quem tem doença renal, cardíaca ou outra condição de saúde deve seguir a orientação do médico.</p>
       </div>
     </div>
+  </div>
+</section>
 
-    <section class="section pillars-section">
-      <div class="container">
-        <div class="section-header rv">
-          <h2>Por que escolher a Alpha Nutri</h2>
-          <p>Qualidade, procedência e cuidado com a sua saúde em cada detalhe.</p>
-        </div>
-        <div class="pillars">
-          <article class="pillar spot rv">
-            <h3>Qualidade certificada</h3>
-            <p>Suplementos e vitaminas com procedência, pureza e segurança comprovadas. Trabalhamos apenas com marcas
-              certificadas pela ANVISA.</p>
-          </article>
-          <article class="pillar spot rv">
-            <h3>Formulações eficazes</h3>
-            <p>Fórmulas pensadas para a saúde a longo prazo, sem atalhos e sem comprometer o seu bem-estar.</p>
-          </article>
-          <article class="pillar spot rv">
-            <h3>Orientação profissional</h3>
-            <p>Acompanhamento nutricional personalizado, porque cada organismo é único e merece atenção especial.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="produtos" class="section">
-      <div class="container">
-        <div class="section-header rv">
-          <h2>Mais vendidos</h2>
-          <p>Os suplementos mais procurados pelos nossos clientes.</p>
-        </div>
-        <div class="products-grid">
-          <article class="product-card spot rv">
-            <div class="media"><img src="img/vitamina D.jpeg" alt="Vitamina D Alpha Nutri" width="400" height="260"
-                loading="lazy"><span class="chip">Vitaminas</span></div>
-            <div class="body">
-              <h3>Vitamina D</h3>
-              <p>Suporte à saúde óssea, imunidade fortalecida e mais disposição no dia a dia.</p>
-              <div class="foot"><span class="price">R$ 49,90</span><a class="btn btn-green btn-sm"
-                  href="#contato">Comprar</a></div>
-            </div>
-          </article>
-          <article class="product-card spot rv">
-            <div class="media"><img src="img/whey protein.jpeg" alt="Whey Protein Alpha Nutri" width="400" height="260"
-                loading="lazy"><span class="chip">Proteínas</span></div>
-            <div class="body">
-              <h3>Whey Protein</h3>
-              <p>Proteína de rápida absorção, ideal para a recuperação muscular pós-treino.</p>
-              <div class="foot"><span class="price">R$ 129,90</span><a class="btn btn-green btn-sm"
-                  href="#contato">Comprar</a></div>
-            </div>
-          </article>
-          <article class="product-card spot rv">
-            <div class="media"><img src="img/termogenico.jpeg" alt="Termogênico Alpha Nutri" width="400" height="260"
-                loading="lazy"><span class="chip">Termogênicos</span></div>
-            <div class="body">
-              <h3>Termogênico Natural</h3>
-              <p>Estimula o metabolismo, com energia sustentada e foco durante os treinos.</p>
-              <div class="foot"><span class="price">R$ 89,90</span><a class="btn btn-green btn-sm"
-                  href="#contato">Comprar</a></div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="servicos" class="section alt">
-      <div class="container">
-        <div class="section-header rv">
-          <h2>Como podemos ajudar você</h2>
-          <p>Soluções completas para sua saúde e performance.</p>
-        </div>
-        <div class="services-grid">
-          <article class="service-card spot rv"><img src="img/Consulta Nutricional.jpg" alt="Consulta nutricional"
-              width="400" height="200" loading="lazy">
-            <div class="body">
-              <h3>Consulta nutricional</h3>
-              <p>Avaliação individual e plano alimentar sob medida para seus objetivos.</p><a class="link"
-                href="#contato">Agendar consulta</a>
-            </div>
-          </article>
-          <article class="service-card spot rv"><img src="img/Plano de Suplementação.jpeg" alt="Plano de suplementação"
-              width="400" height="200" loading="lazy">
-            <div class="body">
-              <h3>Plano de suplementação</h3>
-              <p>Estratégia de suplementos alinhada ao seu perfil, metas e rotina de treino.</p><a class="link"
-                href="#contato">Saiba mais</a>
-            </div>
-          </article>
-          <article class="service-card spot rv"><img src="img/Assessoria Corporativa.jpg" alt="Assessoria corporativa"
-              width="400" height="200" loading="lazy">
-            <div class="body">
-              <h3>Assessoria corporativa</h3>
-              <p>Programas de qualidade de vida para empresas que investem em seus colaboradores.</p><a class="link"
-                href="#contato">Fale conosco</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="quiz" class="section">
-      <div class="container">
-        <div class="section-header rv">
-          <h2>Qual suplemento combina com você?</h2>
-          <p>Responda 4 perguntas rápidas e receba uma recomendação inicial. Leva menos de um minuto.</p>
-        </div>
-        <div class="quiz rv">
-          <div class="q-progress" aria-hidden="true"><i id="quiz-bar"></i></div>
-          <div id="quiz-stage"></div>
-          <noscript>
-            <p>Ative o JavaScript para usar o quiz ou fale com a gente pelo WhatsApp.</p>
-          </noscript>
-        </div>
-      </div>
-    </section>
-
-    <section id="calculadoras" class="section alt">
-      <div class="container">
-        <div class="section-header rv">
-          <h2>Calcule suas necessidades</h2>
-          <p>IMC, proteína e água diária em um só lugar. Os resultados são estimativas gerais.</p>
-        </div>
-        <div class="calc">
-          <form class="calc-form rv" id="calc-form" novalidate>
-            <div class="field"><label for="c-peso">Peso (kg)</label><input id="c-peso" type="number" inputmode="decimal"
-                min="30" max="300" step="0.1" placeholder="Ex.: 72"></div>
-            <div class="field"><label for="c-altura">Altura (cm)</label><input id="c-altura" type="number"
-                inputmode="numeric" min="120" max="230" step="1" placeholder="Ex.: 175"></div>
-            <div class="field"><label for="c-obj">Objetivo</label><select id="c-obj">
-                <option value="saude">Saúde em geral</option>
-                <option value="massa">Ganhar massa muscular</option>
-                <option value="emagrecer">Emagrecer</option>
-              </select></div>
-            <div class="field"><label for="c-treino">Treino por dia</label><select id="c-treino">
-                <option value="0">Não treino</option>
-                <option value="0.5">30 minutos</option>
-                <option value="1" selected>1 hora</option>
-                <option value="1.5">1h30</option>
-                <option value="2">2 horas ou mais</option>
-              </select></div>
-          </form>
-          <div class="calc-out rv" aria-live="polite">
-            <div class="res"><span>IMC</span><strong id="o-imc">--</strong><small id="o-imc-n">Informe peso e
-                altura.</small></div>
-            <div class="res"><span>Proteína por dia</span><strong id="o-prot">--</strong><small>Faixa estimada para o
-                seu objetivo.</small></div>
-            <div class="res"><span>Água por dia</span><strong id="o-agua">--</strong><small>Inclui a reposição do
-                treino.</small></div>
-            <button type="button" class="btn btn-green" id="calc-cta" disabled>Receber orientação personalizada</button>
-            <p class="note">Estimativas gerais, sem caráter de diagnóstico. Quem tem doença renal, cardíaca ou outra
-              condição de saúde deve seguir a orientação do médico.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="historia" class="section">
-      <div class="container">
-        <div class="section-header rv">
-          <h2>De uma ideia à referência</h2>
-          <p>A trajetória de uma empresa que nasceu da paixão por nutrição e cresceu com ciência e dedicação.</p>
-        </div>
-        <ol class="timeline">
-          <li class="rv"><time>2014</time>
-            <h3>O início</h3>
-            <p>Estudantes apaixonados por saúde e administração notaram a falta de transparência, qualidade acessível e
-              atendimento humano no mercado de suplementos de Recife.</p>
-          </li>
-          <li class="rv"><time>2016</time>
-            <h3>Primeiros passos</h3>
-            <p>A Alpha Nutri abre as portas na Av. Caxangá com uma missão clara: suplementos certificados, orientação
-              profissional e preço justo.</p>
-          </li>
-          <li class="rv"><time>2018</time>
-            <h3>Crescimento</h3>
-            <p>O portfólio passa de 100 produtos e a consultoria nutricional personalizada se torna um diferencial
-              reconhecido.</p>
-          </li>
-          <li class="rv"><time>2020</time>
-            <h3>Expansão digital</h3>
-            <p>Lançamento do e-commerce e das consultorias virtuais, com clientes atendidos em todo o Nordeste.</p>
-          </li>
-          <li class="rv"><time>2024</time>
-            <h3>Referência em Recife</h3>
-            <p>Mais de 3.000 clientes, 200 produtos e uma equipe multidisciplinar consolidam a marca na região.</p>
-          </li>
-        </ol>
-        <div class="mvv">
-          <article class="spot rv">
-            <h3>Missão</h3>
-            <p>Capacitar pessoas a viverem sua melhor versão por meio de nutrição premium, baseada em ciência e ética,
-              com saúde e bem-estar acessíveis.</p>
-          </article>
-          <article class="spot rv">
-            <h3>Visão</h3>
-            <p>Ser referência nacional em suplementos de alta performance, reconhecida por transparência, inovação e
-              compromisso com a saúde.</p>
-          </article>
-          <article class="spot rv">
-            <h3>Valores</h3>
-            <ul>
-              <li>Qualidade acima de tudo</li>
-              <li>Inovação constante</li>
-              <li>Compromisso com a saúde</li>
-              <li>Transparência total</li>
-              <li>Sustentabilidade</li>
-              <li>Atendimento humano</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="equipe" class="section alt">
-      <div class="container">
-        <div class="section-header rv">
-          <h2>Quem faz a Alpha Nutri</h2>
-          <p>Administração, consultoria, economia e desenvolvimento humano trabalhando juntos em cada detalhe.</p>
-        </div>
-        <div class="team-grid">
-          <article class="team-card spot rv"><img src="img/team_maria.svg" alt="Maria Heloísa" width="88" height="88"
-              loading="lazy">
-            <h3>Maria Heloísa</h3>
-            <p class="role">Administração de Materiais e Patrimônio</p>
-            <p>Gestão de materiais, estoque e patrimônio, garantindo que cada produto chegue com qualidade e eficiência
-              logística.</p>
-          </article>
-          <article class="team-card spot rv"><img src="img/team_deyvid.svg" alt="Deyvid Ivson" width="88" height="88"
-              loading="lazy">
-            <h3>Deyvid Ivson</h3>
-            <p class="role">Consultor Organizacional</p>
-            <p>Diagnóstico e reestruturação organizacional, otimização de processos e planejamento estratégico.</p>
-          </article>
-          <article class="team-card spot rv"><img src="img/team_ana.svg" alt="Ana Beatriz" width="88" height="88"
-              loading="lazy">
-            <h3>Ana Beatriz</h3>
-            <p class="role">Consultora Organizacional</p>
-            <p>Cultura organizacional e melhoria contínua, alinhando equipe, processos e resultados.</p>
-          </article>
-          <article class="team-card spot rv"><img src="img/team_daniela.svg" alt="Daniela" width="88" height="88"
-              loading="lazy">
-            <h3>Danielle Moises</h3>
-            <p class="role">Economia e Finanças</p>
-            <p>Análise econômica e financeira, planejamento orçamentário e estratégias de precificação.</p>
-          </article>
-          <article class="team-card spot rv"><img src="img/team_valdilene.svg" alt="Valdilene Paula" width="88"
-              height="88" loading="lazy">
-            <h3>Valdilene Paula</h3>
-            <p class="role">Economia e Finanças</p>
-            <p>Análise de mercado e projeções financeiras para decisões baseadas em dados sólidos.</p>
-          </article>
-          <article class="team-card spot rv"><img src="img/team_jaiany.svg" alt="Jaiany Carolayne" width="88"
-              height="88" loading="lazy">
-            <h3>Jaiany Carolayne</h3>
-            <p class="role">Treinamento e Desenvolvimento</p>
-            <p>Programas de capacitação, treinamentos e workshops para o desenvolvimento de toda a equipe.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="empresa" class="section">
-      <div class="container">
-        <div class="section-header rv">
-          <h2>Dados da empresa</h2>
-          <p>Transparência e confiança: informações oficiais da Alpha Nutri.</p>
-        </div>
-        <div class="company-grid">
-          <div class="spot rv">
-            <h3>Localização</h3>
-            <p><b>Endereço:</b> Av. Caxangá, 262, Recife, PE</p>
-            <p><b>CEP:</b> 50000-000</p>
-            <p><b>Horário:</b> seg a sex, 8h às 18h; sáb, 8h às 13h</p>
-          </div>
-          <div class="spot rv">
-            <h3>Contato</h3>
-            <p><b>Telefone:</b> (81) 3003-6212</p>
-            <p><b>WhatsApp:</b> (81) 99999-0000</p>
-            <p><b>E-mail:</b> contato@alphanutri.com.br</p>
-          </div>
-          <div class="spot rv">
-            <h3>Dados jurídicos</h3>
-            <p><b>Razão social:</b> Alpha Nutri Suplementos LTDA</p>
-            <p><b>CNPJ:</b> 00.000.000/0001-00</p>
-            <p><b>Inscrição estadual:</b> Isenta</p>
-          </div>
-          <div class="spot rv">
-            <h3>Redes sociais</h3>
-            <p>Instagram: @alphanutri</p>
-            <p>Facebook: /alphanutri</p>
-            <p>LinkedIn: /company/alphanutri</p>
-            <p>YouTube: /alphanutri</p>
-          </div>
-        </div>
-        <div class="map-wrap">
-          <iframe class="rv" title="Mapa da Alpha Nutri, Av. Caxangá, 262, Recife"
-            src="https://www.google.com/maps?q=Av.+Caxang%C3%A1,+262,+Recife,+PE&output=embed" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
-          <div class="map-card spot rv">
-            <h3>Visite a loja</h3>
-            <p>Av. Caxangá, 262, Recife, PE</p>
-            <p>Seg a sex, 8h às 18h<br>Sáb, 8h às 13h</p><a class="btn btn-green"
-              href="https://www.google.com/maps/dir/?api=1&destination=Av.+Caxang%C3%A1,+262,+Recife,+PE"
-              target="_blank" rel="noopener">Como chegar</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="faq" class="section alt">
-      <div class="container faq-wrap">
-        <div class="section-header rv">
-          <h2>Perguntas frequentes</h2>
-          <p>Não encontrou o que procurava? Fale com a gente.</p>
-        </div>
-        <div class="faq">
-          <details class="faq-item rv">
-            <summary>Onde fica a Alpha Nutri e qual é o horário de atendimento?</summary>
-            <p>Estamos na Av. Caxangá, 262, em Recife, PE. Atendemos de segunda a sexta, das 8h às 18h, e aos sábados,
-              das 8h às 13h.</p>
-          </details>
-          <details class="faq-item rv">
-            <summary>Os suplementos são certificados pela ANVISA?</summary>
-            <p>Sim. Trabalhamos apenas com marcas certificadas pela ANVISA e de procedência comprovada.</p>
-          </details>
-          <details class="faq-item rv">
-            <summary>Como agendo uma consulta nutricional?</summary>
-            <p>Use o formulário de contato, chame no WhatsApp ou ligue para (81) 3003-6212. Respondemos em até 24 horas.
-            </p>
-          </details>
-          <details class="faq-item rv">
-            <summary>Vocês atendem online?</summary>
-            <p>Sim. Fazemos consultorias virtuais e atendemos clientes de todo o Nordeste pelo e-commerce.</p>
-          </details>
-          <details class="faq-item rv">
-            <summary>Posso usar suplementos sem acompanhamento?</summary>
-            <p>O ideal é ter uma avaliação individual antes de começar. Nosso plano de suplementação é montado de acordo
-              com seu perfil, suas metas e sua rotina de treino.</p>
-          </details>
-          <details class="faq-item rv">
-            <summary>Vocês oferecem programas para empresas?</summary>
-            <p>Sim. A assessoria corporativa reúne programas de qualidade de vida para empresas que investem no
-              bem-estar dos colaboradores.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <section id="contato" class="section">
-      <div class="container">
-        <div class="section-header rv">
-          <h2>Fale conosco</h2>
-          <p>Tire dúvidas, agende consultas ou faça seu pedido. Respondemos em até 24 horas.</p>
-        </div>
-        <div class="contact-layout">
-          <div class="contact-info rv">
-            <h3>Estamos prontos para ajudar</h3>
-            <p>Av. Caxangá, 262, Recife, PE</p>
-            <p>(81) 3003-6212</p>
-            <p>contato@alphanutri.com.br</p>
-            <p>Seg a sex, 8h às 18h. Sáb, 8h às 13h.</p>
-          </div>
-          <form class="form rv" id="contact-form" novalidate>
-            <div class="field"><label for="nome">Nome</label><input id="nome" name="nome" type="text"
-                placeholder="Seu nome completo" autocomplete="name" required></div>
-            <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email"
-                placeholder="seu@email.com" autocomplete="email" required></div>
-            <div class="field full"><label for="mensagem">Mensagem</label><textarea id="mensagem" name="mensagem"
-                rows="5" placeholder="Como podemos ajudar?" required></textarea></div>
-            <button type="submit" class="btn btn-green">Enviar mensagem</button>
-            <p class="status" id="form-status" role="status" aria-live="polite"></p>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container foot-main">
-      <div class="foot-brand rv">
-        <a class="foot-logo" href="#home" aria-label="Alpha Nutri, voltar ao topo"><img src="img/logo.jpeg" alt=""
-            width="76" height="76"><span>Alpha<b>Nutri</b></span></a>
-        <p>Para a rotina real de quem treina e cuida da saúde: suplementos certificados e orientação nutricional que
-          acompanha você de perto.</p>
-      </div>
-      <nav class="foot-col rv" aria-label="Compre">
-        <h3>Compre</h3>
-        <ul>
-          <li><a href="#produtos">Whey Protein</a></li>
-          <li><a href="#produtos">Vitaminas</a></li>
-          <li><a href="#produtos">Termogênicos</a></li>
-          <li><a href="#produtos">Produtos naturais</a></li>
-        </ul>
-      </nav>
-      <nav class="foot-col rv" aria-label="Descubra">
-        <h3>Descubra</h3>
-        <ul>
-          <li><a href="#historia">Nossa história</a></li>
-          <li><a href="#equipe">Equipe</a></li>
-          <li><a href="#servicos">Serviços</a></li>
-          <li><a href="#empresa">Dados da empresa</a></li>
-        </ul>
-      </nav>
-      <nav class="foot-col rv" aria-label="Ajuda">
-        <h3>Ajuda</h3>
-        <ul>
-          <li><a href="#contato">Fale conosco</a></li>
-          <li><a href="#contato">Agendar consulta</a></li>
-          <li><a href="#servicos">Assessoria corporativa</a></li>
-          <li><a href="#contato">Trabalhe conosco</a></li>
-        </ul>
-      </nav>
+<section id="historia" class="section">
+  <div class="container">
+    <div class="section-header rv"><h2>De uma ideia à referência</h2><p>A trajetória de uma empresa que nasceu da paixão por nutrição e cresceu com ciência e dedicação.</p></div>
+    <ol class="timeline">
+      <li class="rv"><time>2025</time><h3>O início</h3><p>Estudantes apaixonados por saúde e administração notaram a falta de transparência, qualidade acessível e atendimento humano no mercado de suplementos. Nascia ali a ideia da Alpha Nutri.</p></li>
+      <li class="rv"><time>2025</time><h3>Primeiros passos</h3><p>A Alpha Nutri abre as portas com uma missão clara: suplementos certificados, orientação profissional e preço justo.</p></li>
+      <li class="rv"><time>2026</time><h3>Crescimento</h3><p>O portfólio se amplia com vitaminas, proteínas, termogênicos e produtos naturais, e a consultoria nutricional personalizada se torna um diferencial.</p></li>
+      <li class="rv"><time>2026</time><h3>Expansão digital</h3><p>Lançamento do e-commerce e das consultorias virtuais, com atendimento a clientes em todo o Nordeste.</p></li>
+      <li class="rv"><time>Hoje</time><h3>Referência em nutrição</h3><p>Uma equipe multidisciplinar e um catálogo completo consolidam a Alpha Nutri como referência em suplementação e orientação nutricional.</p></li>
+    </ol>
+    <div class="mvv">
+      <article class="spot rv"><h3>Missão</h3><p>Capacitar pessoas a viverem sua melhor versão por meio de nutrição premium, baseada em ciência e ética, com saúde e bem-estar acessíveis.</p></article>
+      <article class="spot rv"><h3>Visão</h3><p>Ser referência nacional em suplementos de alta performance, reconhecida por transparência, inovação e compromisso com a saúde.</p></article>
+      <article class="spot rv"><h3>Valores</h3><ul><li>Qualidade acima de tudo</li><li>Inovação constante</li><li>Compromisso com a saúde</li><li>Transparência total</li><li>Sustentabilidade</li><li>Atendimento humano</li></ul></article>
     </div>
-    <div class="foot-ticker" aria-hidden="true">
-      <span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M10 2h4v8h8v4h-8v8h-4v-8H2v-4h8z" />
-        </svg></span>
-      <div class="track"><span>Alpha Nutri orienta. Você evolui.</span><span>Alpha Nutri orienta. Você
-          evolui.</span><span>Alpha Nutri orienta. Você evolui.</span><span>Alpha Nutri orienta. Você
-          evolui.</span><span>Alpha Nutri orienta. Você evolui.</span><span>Alpha Nutri orienta. Você
-          evolui.</span><span>Alpha Nutri orienta. Você evolui.</span><span>Alpha Nutri orienta. Você
-          evolui.</span><span>Alpha Nutri orienta. Você evolui.</span><span>Alpha Nutri orienta. Você
-          evolui.</span><span>Alpha Nutri orienta. Você evolui.</span><span>Alpha Nutri orienta. Você evolui.</span>
-      </div>
+  </div>
+</section>
+
+<section id="equipe" class="section alt">
+  <div class="container">
+    <div class="section-header rv"><h2>Quem faz a Alpha Nutri</h2><p>Administração, consultoria, economia e desenvolvimento humano trabalhando juntos em cada detalhe.</p></div>
+    <div class="team-grid">
+      <article class="team-card spot rv"><img src="img/team_maria.svg" alt="Maria Heloísa" width="88" height="88" loading="lazy"><h3>Maria Heloísa</h3><p class="role">Administração de Materiais e Patrimônio</p><p>Gestão de materiais, estoque e patrimônio, garantindo que cada produto chegue com qualidade e eficiência logística.</p></article>
+      <article class="team-card spot rv"><img src="img/team_deyvid.svg" alt="Deyvid Ivson" width="88" height="88" loading="lazy"><h3>Deyvid Ivson</h3><p class="role">Consultor Organizacional</p><p>Diagnóstico e reestruturação organizacional, otimização de processos e planejamento estratégico.</p></article>
+      <article class="team-card spot rv"><img src="img/team_ana.svg" alt="Ana Beatriz" width="88" height="88" loading="lazy"><h3>Ana Beatriz</h3><p class="role">Consultora Organizacional</p><p>Cultura organizacional e melhoria contínua, alinhando equipe, processos e resultados.</p></article>
+      <article class="team-card spot rv"><img src="img/team_daniela.svg" alt="Daniela" width="88" height="88" loading="lazy"><h3>Daniela</h3><p class="role">Economia e Finanças</p><p>Análise econômica e financeira, planejamento orçamentário e estratégias de precificação.</p></article>
+      <article class="team-card spot rv"><img src="img/team_valdilene.svg" alt="Valdilene Paula" width="88" height="88" loading="lazy"><h3>Valdilene Paula</h3><p class="role">Economia e Finanças</p><p>Análise de mercado e projeções financeiras para decisões baseadas em dados sólidos.</p></article>
+      <article class="team-card spot rv"><img src="img/team_jaiany.svg" alt="Jaiany Carolayne" width="88" height="88" loading="lazy"><h3>Jaiany Carolayne</h3><p class="role">Treinamento e Desenvolvimento</p><p>Programas de capacitação, treinamentos e workshops para o desenvolvimento de toda a equipe.</p></article>
     </div>
-    <div class="container foot-legal">
-      <p class="legal-data">Alpha Nutri Suplementos LTDA. CNPJ: 00.000.000/0001-00. Endereço: Av. Caxangá, 262, Recife,
-        PE, CEP 50000-000.<br>Clique no botão de WhatsApp para ser atendido ou envie um e-mail para
-        contato@alphanutri.com.br. Atendimento de seg a sex, 8h às 18h, e sáb, 8h às 13h.</p>
-      <div class="legal-row">
-        <p>&copy; <span id="year">2026</span> Alpha Nutri. Todos os direitos reservados.</p>
-        <ul>
-          <li><a href="#">Política de privacidade</a></li>
-          <li><a href="#">Termos de uso</a></li>
-          <li><a href="#">Trocas e devoluções</a></li>
-        </ul>
-        <ul class="seals">
-          <li><svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5z" />
-            </svg>Compra segura</li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5z" />
-            </svg>Marcas certificadas pela ANVISA</li>
-        </ul>
-      </div>
+  </div>
+</section>
+
+<section id="empresa" class="section">
+  <div class="container">
+    <div class="section-header rv"><h2>Dados da empresa</h2><p>Transparência e confiança: informações oficiais da Alpha Nutri.</p></div>
+    <div class="company-grid">
+      <div class="spot rv"><h3>Localização</h3><p><b>Endereço:</b> Av. Caxangá, 262, Recife, PE</p><p><b>CEP:</b> 50000-000</p><p><b>Horário:</b> seg a sex, 8h às 18h; sáb, 8h às 13h</p></div>
+      <div class="spot rv"><h3>Contato</h3><p><b>Telefone:</b> (81) 3003-6212</p><p><b>WhatsApp:</b> (81) 99999-0000</p><p><b>E-mail:</b> contato@alphanutri.com.br</p></div>
+      <div class="spot rv"><h3>Dados jurídicos</h3><p><b>Razão social:</b> Alpha Nutri Suplementos LTDA</p><p><b>CNPJ:</b> 00.000.000/0001-00</p><p><b>Inscrição estadual:</b> Isenta</p></div>
+      <div class="spot rv"><h3>Redes sociais</h3><p>Instagram: @alphanutri</p><p>Facebook: /alphanutri</p><p>LinkedIn: /company/alphanutri</p><p>YouTube: /alphanutri</p></div>
     </div>
-  </footer>
-  <a class="wa" href="https://wa.me/5581999990000?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Alpha%20Nutri."
-    target="_blank" rel="noopener" aria-label="Falar com a Alpha Nutri pelo WhatsApp"><svg viewBox="0 0 24 24"
-      aria-hidden="true">
-      <path
-        d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.2 14.8l-.3-.2-2.4.6.7-2.3-.2-.3A8 8 0 0 1 12 4zM9 7.5c-.3 0-.6.1-.8.4-.5.6-.8 1.3-.5 2.4.6 1.9 2.3 3.9 4.9 5 1.1.4 1.9.4 2.5.1.5-.3.9-.8 1-1.3 0-.2 0-.4-.2-.5l-1.8-.9c-.2-.1-.4 0-.5.1l-.6.7c-.1.1-.3.2-.5.1-1.2-.5-2.2-1.5-2.7-2.6 0-.2 0-.3.1-.4l.5-.6c.1-.1.1-.3 0-.5l-.8-1.8c-.1-.2-.3-.3-.5-.3z" />
-    </svg><span>Fale conosco</span></a>
-  <script src="js/main.js?v=5"></script>
+    <div class="map-wrap">
+      <iframe class="rv" title="Mapa da Alpha Nutri, Av. Caxangá, 262, Recife" src="https://www.google.com/maps?q=Av.+Caxang%C3%A1,+262,+Recife,+PE&output=embed" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+      <div class="map-card spot rv"><h3>Visite a loja</h3><p>Av. Caxangá, 262, Recife, PE</p><p>Seg a sex, 8h às 18h<br>Sáb, 8h às 13h</p><a class="btn btn-green" href="https://www.google.com/maps/dir/?api=1&destination=Av.+Caxang%C3%A1,+262,+Recife,+PE" target="_blank" rel="noopener noreferrer">Como chegar</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="section alt">
+  <div class="container faq-wrap">
+    <div class="section-header rv"><h2>Perguntas frequentes</h2><p>Não encontrou o que procurava? Fale com a gente.</p></div>
+    <div class="faq"><details class="faq-item rv"><summary>Onde fica a Alpha Nutri e qual é o horário de atendimento?</summary><p>Estamos na Av. Caxangá, 262, em Recife, PE. Atendemos de segunda a sexta, das 8h às 18h, e aos sábados, das 8h às 13h.</p></details><details class="faq-item rv"><summary>Os suplementos são certificados pela ANVISA?</summary><p>Sim. Trabalhamos apenas com marcas certificadas pela ANVISA e de procedência comprovada.</p></details><details class="faq-item rv"><summary>Como agendo uma consulta nutricional?</summary><p>Use o formulário de contato, chame no WhatsApp ou ligue para (81) 3003-6212. Respondemos em até 24 horas.</p></details><details class="faq-item rv"><summary>Vocês atendem online?</summary><p>Sim. Fazemos consultorias virtuais e atendemos clientes de todo o Nordeste pelo e-commerce.</p></details><details class="faq-item rv"><summary>Posso usar suplementos sem acompanhamento?</summary><p>O ideal é ter uma avaliação individual antes de começar. Nosso plano de suplementação é montado de acordo com seu perfil, suas metas e sua rotina de treino.</p></details><details class="faq-item rv"><summary>Vocês oferecem programas para empresas?</summary><p>Sim. A assessoria corporativa reúne programas de qualidade de vida para empresas que investem no bem-estar dos colaboradores.</p></details></div>
+  </div>
+</section>
+
+<section id="contato" class="section">
+  <div class="container">
+    <div class="section-header rv"><h2>Fale conosco</h2><p>Tire dúvidas, agende consultas ou faça seu pedido. Respondemos em até 24 horas.</p></div>
+    <div class="contact-layout">
+      <div class="contact-info rv">
+        <h3>Estamos prontos para ajudar</h3>
+        <p>Av. Caxangá, 262, Recife, PE</p>
+        <p>(81) 3003-6212</p>
+        <p>contato@alphanutri.com.br</p>
+        <p>Seg a sex, 8h às 18h. Sáb, 8h às 13h.</p>
+      </div>
+      <form class="form rv" id="contact-form" novalidate>
+        <div class="field"><label for="nome">Nome</label><input id="nome" name="nome" type="text" maxlength="80" placeholder="Seu nome completo" autocomplete="name" required></div>
+        <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" maxlength="120" placeholder="seu@email.com" autocomplete="email" required></div>
+        <div class="field full"><label for="mensagem">Mensagem</label><textarea id="mensagem" name="mensagem" rows="5" maxlength="1000" placeholder="Como podemos ajudar?" required></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="website">Não preencha este campo</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+        <button type="submit" class="btn btn-green">Enviar mensagem</button>
+        <p class="status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container foot-main">
+    <div class="foot-brand rv">
+      <a class="foot-logo" href="#home" aria-label="Alpha Nutri, voltar ao topo"><img src="img/logo.jpeg" alt="" width="76" height="76"><span>Alpha<b>Nutri</b></span></a>
+      <p>Para a rotina real de quem treina e cuida da saúde: suplementos certificados e orientação nutricional que acompanha você de perto.</p>
+    </div>
+    <nav class="foot-col rv" aria-label="Compre"><h3>Compre</h3><ul><li><a href="#produtos">Whey Protein</a></li><li><a href="#produtos">Vitaminas</a></li><li><a href="#produtos">Termogênicos</a></li><li><a href="#produtos">Produtos naturais</a></li></ul></nav>
+    <nav class="foot-col rv" aria-label="Descubra"><h3>Descubra</h3><ul><li><a href="#historia">Nossa história</a></li><li><a href="#equipe">Equipe</a></li><li><a href="#servicos">Serviços</a></li><li><a href="#empresa">Dados da empresa</a></li></ul></nav>
+    <nav class="foot-col rv" aria-label="Ajuda"><h3>Ajuda</h3><ul><li><a href="#contato">Fale conosco</a></li><li><a href="#contato">Agendar consulta</a></li><li><a href="#servicos">Assessoria corporativa</a></li><li><a href="#contato">Trabalhe conosco</a></li></ul></nav>
+  </div>
+  <div class="foot-ticker" aria-hidden="true">
+    <span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 2h4v8h8v4h-8v8h-4v-8H2v-4h8z"/></svg></span>
+    <div class="track"><span>Alpha Nutri orienta. Você evolui.</span><span>Alpha Nutri orienta. Você evolui.</span><span>Alpha Nutri orienta. Você evolui.</span><span>Alpha Nutri orienta. Você evolui.</span><span>Alpha Nutri orienta. Você evolui.</span><span>Alpha Nutri orienta. Você evolui.</span><span>Alpha Nutri orienta. Você evolui.</span><span>Alpha Nutri orienta. Você evolui.</span><span>Alpha Nutri orienta. Você evolui.</span><span>Alpha Nutri orienta. Você evolui.</span><span>Alpha Nutri orienta. Você evolui.</span><span>Alpha Nutri orienta. Você evolui.</span></div>
+  </div>
+  <div class="container foot-legal">
+    <div class="legal-row">
+      <p>&copy; <span id="year">2026</span> Alpha Nutri. Todos os direitos reservados.</p>
+      <ul><li><a href="#">Política de privacidade</a></li><li><a href="#">Termos de uso</a></li><li><a href="#">Trocas e devoluções</a></li></ul>
+      <ul class="seals"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5z"/></svg>Compra segura</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5z"/></svg>Marcas certificadas pela ANVISA</li></ul>
+    </div>
+  </div>
+</footer>
+<a class="wa" href="#contato" aria-label="Falar com a Alpha Nutri pelo WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.2 14.8l-.3-.2-2.4.6.7-2.3-.2-.3A8 8 0 0 1 12 4zM9 7.5c-.3 0-.6.1-.8.4-.5.6-.8 1.3-.5 2.4.6 1.9 2.3 3.9 4.9 5 1.1.4 1.9.4 2.5.1.5-.3.9-.8 1-1.3 0-.2 0-.4-.2-.5l-1.8-.9c-.2-.1-.4 0-.5.1l-.6.7c-.1.1-.3.2-.5.1-1.2-.5-2.2-1.5-2.7-2.6 0-.2 0-.3.1-.4l.5-.6c.1-.1.1-.3 0-.5l-.8-1.8c-.1-.2-.3-.3-.5-.3z"/></svg><span>Fale conosco</span></a>
+<script src="js/main.js?v=7"></script>
 </body>
-
 </html>
